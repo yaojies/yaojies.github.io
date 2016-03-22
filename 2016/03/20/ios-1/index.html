@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="#1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
-.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代">
+<meta name="description" content="1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
+.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发入门——Objective-C基础语法">
-<meta property="og:url" content="http://santu.space/2016/03/20/ios/index.html">
+<meta property="og:url" content="http://santu.space/2016/03/20/ios-1/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="#1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
-.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代">
-<meta property="og:updated_time" content="2016-03-22T17:12:18.000Z">
+<meta property="og:description" content="1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
+.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代码">
+<meta property="og:updated_time" content="2016-03-22T17:21:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发入门——Objective-C基础语法">
-<meta name="twitter:description" content="#1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
-.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代">
+<meta name="twitter:description" content="1.文件扩展名Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |
+.h文件： 头文件，包含类、类型、函数、常量的声明。.m文件： 源文件，可以同时包含Objective-C和C代码。.mm文件：源文件，可以同时包含Objective-C、C和C++代码">
 
 
 
@@ -250,8 +250,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/20/ios/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/ios/" itemprop="commentsCount"></span>
+                <a href="/2016/03/20/ios-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/ios-1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -273,10 +273,11 @@
       
 
       
-        <p>#1.文件扩展名<br>Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |</p>
+        <h2 id="1-文件扩展名"><a href="#1-文件扩展名" class="headerlink" title="1.文件扩展名"></a>1.文件扩展名</h2><p>Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |</p>
 <p>.h文件： 头文件，包含类、类型、函数、常量的声明。<br>.m文件： 源文件，可以同时包含Objective-C和C代码。<br>.mm文件：源文件，可以同时包含Objective-C、C和C++代码。  </p>
-<p>#2.类<br>    @class RootViewController;</p>
-<pre><code>@interface MyClass : NSObject
+<h2 id="2-类"><a href="#2-类" class="headerlink" title="2.类"></a>2.类</h2><pre><code>@class RootViewController;
+
+@interface MyClass : NSObject
 {
     UIWindow *window;
     RootViewController    *viewController;
@@ -284,10 +285,10 @@
 //方法声明写在这里
 @end
 </code></pre><p>MyClass为类名，NSObject为父类名。中括号中的为成员变量声明。  </p>
-<p>#3.方法<br>Objective-C中方法可以声明类方法和实例方法。方法声明包括方法类型、返回类型、一个或多个签名关键字、参数类型和参数名称。<br>-(void)insertObject:(id)anObject atIndex: (NSString)index;<br>(-)减号表示这是一个实例方法，对应的(+)表示类方法。(void)表示返回类型。冒号用来声明参数，如果没有参数，则只写第一个签名关键字并忽略冒号。<br>方法的调用：实例方法需要先进行实例化才能调用，类方法可以直接调用。<br>方法调用需要用到方括号语法： </p>
+<h2 id="3-方法"><a href="#3-方法" class="headerlink" title="3.方法"></a>3.方法</h2><p>Objective-C中方法可以声明类方法和实例方法。方法声明包括方法类型、返回类型、一个或多个签名关键字、参数类型和参数名称。<br>-(void)insertObject:(id)anObject atIndex: (NSString)index;<br>(-)减号表示这是一个实例方法，对应的(+)表示类方法。(void)表示返回类型。冒号用来声明参数，如果没有参数，则只写第一个签名关键字并忽略冒号。<br>方法的调用：实例方法需要先进行实例化才能调用，类方法可以直接调用。<br>方法调用需要用到方括号语法： </p>
 <pre><code>[myClass insertObject: anObject atIndex: 0];  
 </code></pre><p>以上语句为调用myClass的insertObject方法。  </p>
-<p>#4.属性<br>属性声明和方法声明一样，也是在类接口定义中进行，用@property表示。  </p>
+<h2 id="4-属性"><a href="#4-属性" class="headerlink" title="4.属性"></a>4.属性</h2><p>属性声明和方法声明一样，也是在类接口定义中进行，用@property表示。  </p>
 <pre><code>@property BOOL flag;  
 @property NSString *myStr;  
 @property UIView *rootView;  
@@ -295,7 +296,7 @@
 @synthesize myStr;  
 @synthesize rootView;  //只声明getter方法
 </code></pre><p>@synthesize用来生成属性对应的setter和getter方法。</p>
-<p>#5.协议<br>协议用来声明能被任何类实现的方法，但本身并不是类。  </p>
+<h2 id="5-协议"><a href="#5-协议" class="headerlink" title="5.协议"></a>5.协议</h2><p>协议用来声明能被任何类实现的方法，但本身并不是类。  </p>
 <pre><code>@interface MyClass :NSObject&lt;UIApplicationDelegate,AnotherProtocol&gt; { }        
 @end  
 </code></pre><p>尖括号&lt;&gt;表示该类采用某个协议。协议没有父类，也没有实例变量。协议的声明只有一下一个方法：  </p>
@@ -357,8 +358,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/20/ios/"
-           data-title="iOS开发入门——Objective-C基础语法" data-url="http://santu.space/2016/03/20/ios/">
+      <div class="ds-thread" data-thread-key="2016/03/20/ios-1/"
+           data-title="iOS开发入门——Objective-C基础语法" data-url="http://santu.space/2016/03/20/ios-1/">
       </div>
     
   </div>
@@ -447,7 +448,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文件扩展名"><span class="nav-number">1.</span> <span class="nav-text">1.文件扩展名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-类"><span class="nav-number">2.</span> <span class="nav-text">2.类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-方法"><span class="nav-number">3.</span> <span class="nav-text">3.方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-属性"><span class="nav-number">4.</span> <span class="nav-text">4.属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-协议"><span class="nav-number">5.</span> <span class="nav-text">5.协议</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

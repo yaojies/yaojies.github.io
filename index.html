@@ -294,22 +294,14 @@
 
       
         
-          
-            <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
+          <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
 <h2 id="1-property语法格式："><a href="#1-property语法格式：" class="headerlink" title="1.property语法格式："></a>1.property语法格式：</h2><pre><code>@property (参数1, 参数2) 类型名;  
-</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。<br>copy: 适用非共享内存。<br>atomic: 默认属性，线程安全型变量，只能有一个线程进行访问。非ARC中需要设置访问锁保证正确的get/set。<br>nonatomic: 非线程安全型变量，多个线程可同时访问，容易失控。<br>weak: 与assign对应，用于IBOutlets:  </p>
-<pre><code>@property (weak,nonatomic) IBOutlet UIButton *myButton;  
-</code></pre><p>strong: ARC中默认，等于非ARC中多retain。用于ARC:  </p>
-<pre><code>@property (strong,nonatomic)ViewController *viewController;
-</code></pre><p>当strong类型的指针被释放掉之后，所有指向同一对象的weak指针都会被清零。<br>readonly: 只有get方法，没有set方法。<br>readwrite: 默认属性，有get/set方法。<br>unsafe_unretauined: 用于ARC，与assign相似。它只是告诉ARC如何正确地调用声明为unsafe_unretauined变量的retain和release   </p>
-<h2 id="2-property的实现方式"><a href="#2-property的实现方式" class="headerlink" title="2.@property的实现方式:"></a>2.@property的实现方式:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;  </span><br><span class="line">@interface ViewController : UIViewController  </span><br><span class="line">&#123;  </span><br><span class="line">    NSObject *obj;  </span><br><span class="line">&#125;  </span><br><span class="line">@property (nonatomic,retain) NSObject *obj;  </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>在头文件中声明属性后在实现文件中用关键字@synthesize实现getter，setter。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@implementation ViewController  </span><br><span class="line">@synthesize obj;  </span><br><span class="line">- (void)viewDidLoad  </span><br><span class="line">&#123;  </span><br><span class="line">    [super viewDidLoad];  </span><br><span class="line">    self.obj = nil;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>按照约定赋值方法以set开头，取值方法以实例变量名命名。当使用点语法给存取器发送消息时；get与set的语法是相同的。  </p>
-<p>总结：@property等同于在.h文件中声明实例变量的get/set方法，@synthesize等同于在.m文件中实现实例变量的get/set方法。使用@property和@synthesize创建存取器要比手动声明两个存取方法（getter和setter）更简单。而且我们在使用属性时可以使用点语法赋值或取值。  </p>
-<p><a href="http://www.linuxidc.com/Linux/2014-03/97744.htm" target="_blank" rel="external">参考资料1</a><br><a href="http://blog.csdn.net/totogo2010/article/details/7763139" target="_blank" rel="external">参考资料2</a><br><a href="http://www.cocoachina.com/ios/20150123/11003.html" target="_blank" rel="external">参考资料3</a> </p>
-
-          
+</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。 </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/26/Objective-C @property/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -421,29 +413,13 @@
 
       
         
-          
-            <p>以前接入sdk都是别人封装好的库，直接调用方法就是了。前段时间在给团队的项目接入facebook登陆功能时，需要自己看官方demo和文档，于是也遇到了不少坑。  </p>
-<h1 id="1-下载demo"><a href="#1-下载demo" class="headerlink" title="1.下载demo"></a>1.下载demo</h1><p><a href="https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip" target="_blank" rel="external">Facebook-ios-sdk.zip</a><br>首先从官网下载facebook sdk的demo，然后可以直接根据官网的文档进行接入。<br><a href="https://developers.facebook.com/docs/ios/getting-started#settings" target="_blank" rel="external">https://developers.facebook.com/docs/ios/getting-started#settings</a>  </p>
-<h1 id="2-引入framework"><a href="#2-引入framework" class="headerlink" title="2.引入framework"></a>2.引入framework</h1><p>建立Facebook App；设置工程plist属性。<br>在plist配置Facebook App Id：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;CFBundleURLTypes&lt;/key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">  &lt;dict&gt;</span><br><span class="line">    &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">      &lt;string&gt;fb&#123;your-app-id&#125;&lt;/string&gt;</span><br><span class="line">    &lt;/array&gt;</span><br><span class="line">  &lt;/dict&gt;</span><br><span class="line">&lt;/array&gt;</span><br><span class="line">&lt;key&gt;FacebookAppID&lt;/key&gt;</span><br><span class="line">&lt;string&gt;&#123;your-app-id&#125;&lt;/string&gt;</span><br><span class="line">&lt;key&gt;FacebookDisplayName&lt;/key&gt;</span><br><span class="line">&lt;string&gt;&#123;your-app-name&#125;&lt;/string&gt;</span><br></pre></td></tr></table></figure>
-<p>添加白名单：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">  &lt;key&gt;NSExceptionDomains&lt;/key&gt;</span><br><span class="line">  &lt;dict&gt;</span><br><span class="line">    &lt;key&gt;facebook.com&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">      &lt;key&gt;NSIncludesSubdomains&lt;/key&gt; &lt;true/&gt;        </span><br><span class="line">      &lt;key&gt;NSThirdPartyExceptionRequiresForwardSecrecy&lt;/key&gt; &lt;false/&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">    &lt;key&gt;fbcdn.net&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">      &lt;key&gt;NSIncludesSubdomains&lt;/key&gt; &lt;true/&gt;</span><br><span class="line">      &lt;key&gt;NSThirdPartyExceptionRequiresForwardSecrecy&lt;/key&gt;  &lt;false/&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">    &lt;key&gt;akamaihd.net&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">      &lt;key&gt;NSIncludesSubdomains&lt;/key&gt; &lt;true/&gt;</span><br><span class="line">      &lt;key&gt;NSThirdPartyExceptionRequiresForwardSecrecy&lt;/key&gt; &lt;false/&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">  &lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
-<p>这一步一直没有生效，所以我直接允许了所有HTTP请求：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;</span><br><span class="line">    &lt;true/&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="3-修改AppDelegate-m"><a href="#3-修改AppDelegate-m" class="headerlink" title="3.修改AppDelegate.m"></a>3.修改AppDelegate.m</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//  AppDelegate.m</span><br><span class="line">#import &lt;FBSDKCoreKit/FBSDKCoreKit.h&gt;</span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">  [[FBSDKApplicationDelegate sharedInstance] application:application</span><br><span class="line">    didFinishLaunchingWithOptions:launchOptions];</span><br><span class="line">  // Add any custom logic here.</span><br><span class="line">  return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation &#123;</span><br><span class="line">  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application</span><br><span class="line">    openURL:url</span><br><span class="line">    sourceApplication:sourceApplication</span><br><span class="line">    annotation:annotation</span><br><span class="line">  ];</span><br><span class="line">  // Add any custom logic here.</span><br><span class="line">  return handled;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这一步后运行时出现了一个错误：  </p>
-<pre><code>dyld: Symbol not found: \_OBJC_CLASS\_$_NSURLComponents Expected in: /System/Library/Frameworks/Foundation.framework/Foundation...  
-</code></pre><p>后来发现因为我用的测试机是iOS6测试的，换了一个iOS9的酒没有这个问题。查了一下是iOS framework的Optional(弱引用)和Required(强引用)问题，于是将Foundation.framework引用改成Optional，另外在这之前我已经将FacebookSDK的库都改成Optional了。果然问题解决了。</p>
-<h1 id="4-添加Button"><a href="#4-添加Button" class="headerlink" title="4.添加Button"></a>4.添加Button</h1><h3 id="1-添加登陆按钮可以参考文档给出的代码："><a href="#1-添加登陆按钮可以参考文档给出的代码：" class="headerlink" title="(1)添加登陆按钮可以参考文档给出的代码："></a>(1)添加登陆按钮可以参考文档给出的代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// Add this to the header of your file, e.g. in ViewController.m </span><br><span class="line">// after #import &quot;ViewController.h&quot;</span><br><span class="line">#import &lt;FBSDKCoreKit/FBSDKCoreKit.h&gt;</span><br><span class="line">#import &lt;FBSDKLoginKit/FBSDKLoginKit.h&gt;</span><br><span class="line"></span><br><span class="line">// Add this to the body </span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">  [super viewDidLoad];</span><br><span class="line">  FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];</span><br><span class="line">  // Optional: Place the button in the center of your view.</span><br><span class="line">  loginButton.center = self.view.center;</span><br><span class="line">  [self.view addSubview:loginButton];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>需要添加Permissions:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//In your view header file add:</span><br><span class="line">//  ViewController.h</span><br><span class="line">#import &lt;FBSDKLoginKit/FBSDKLoginKit.h&gt;</span><br><span class="line">@interface ViewController : UIViewController</span><br><span class="line">@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">//In your view file add:</span><br><span class="line"></span><br><span class="line">// Extend the code sample &quot;1. Add Facebook Login Button Code&quot;</span><br><span class="line">// In your viewDidLoad method:</span><br><span class="line">loginButton.readPermissions = </span><br><span class="line">  @[@&quot;public_profile&quot;, @&quot;email&quot;, @&quot;user_friends&quot;];</span><br></pre></td></tr></table></figure>
-<h3 id="2-也可以按照文档用自定义按钮："><a href="#2-也可以按照文档用自定义按钮：" class="headerlink" title="(2)也可以按照文档用自定义按钮："></a>(2)也可以按照文档用自定义按钮：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">// Add this to the header of your file</span><br><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import &lt;FBSDKCoreKit/FBSDKCoreKit.h&gt;</span><br><span class="line">#import &lt;FBSDKLoginKit/FBSDKLoginKit.h&gt;</span><br><span class="line"></span><br><span class="line">// Add this to the body</span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">  [super viewDidLoad];</span><br><span class="line">    </span><br><span class="line">  // Add a custom login button to your app 添加自定义按钮也可以在布局文件中实现再关联到登陆方法</span><br><span class="line">  UIButton *myLoginButton=[UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">  myLoginButton.backgroundColor=[UIColor darkGrayColor];</span><br><span class="line">  myLoginButton.frame=CGRectMake(0,0,180,40);</span><br><span class="line">  myLoginButton.center = self.view.center;</span><br><span class="line">  [myLoginButton setTitle: @&quot;My Login Button&quot; forState: UIControlStateNormal];</span><br><span class="line"></span><br><span class="line">  // Handle clicks on the button</span><br><span class="line">  [myLoginButton </span><br><span class="line">    addTarget:self </span><br><span class="line">    action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line"> </span><br><span class="line">  // Add the button to the view</span><br><span class="line">  [self.view addSubview:myLoginButton];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Once the button is clicked, show the login dialog</span><br><span class="line">-(void)loginButtonClicked</span><br><span class="line">&#123;</span><br><span class="line">  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];</span><br><span class="line">  [login</span><br><span class="line">    logInWithReadPermissions: @[@&quot;public_profile&quot;]</span><br><span class="line">          fromViewController:self</span><br><span class="line">                     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) &#123;</span><br><span class="line">    if (error) &#123; </span><br><span class="line">      NSLog(@&quot;Process error&quot;);</span><br><span class="line">    &#125; else if (result.isCancelled) &#123;</span><br><span class="line">      NSLog(@&quot;Cancelled&quot;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      NSLog(@&quot;Logged in&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>Facebook登陆方式有四种： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSUInteger, FBSDKLoginBehavior ) &#123;</span><br><span class="line">   FBSDKLoginBehaviorNative = 0,  </span><br><span class="line">   /*</span><br><span class="line">   This is the default behavior, and indicates logging in through the native Facebook app may be used. The SDK may still use Safari instead.</span><br><span class="line">   */</span><br><span class="line">   FBSDKLoginBehaviorBrowser,  </span><br><span class="line">   /*</span><br><span class="line">   Attempts log in through the Safari or SFSafariViewController, if available.</span><br><span class="line">   */</span><br><span class="line">   FBSDKLoginBehaviorSystemAccount,  </span><br><span class="line">   /*Attempts log in through the Facebook account currently signed in through the device Settings.</span><br><span class="line">   */   </span><br><span class="line">   FBSDKLoginBehaviorWeb,  </span><br><span class="line">   /*</span><br><span class="line">   Attemps log in through a modal UIWebView pop up</span><br><span class="line">   */</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>（SFSafariViewController是iOS9引入点类，在app中打开一个SafariView而不用跳转到Safari，从用户体验上来说是极好的。另外，appstore最新的Facebook app需要ios7才能安装。）<br>可以通过以下方式指定登陆方式为FBSDKLoginBehaviorWeb，强制打开一个web：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];</span><br><span class="line">login.loginBehavior=FBSDKLoginBehaviorWeb;  // it open inside the app using popup menu</span><br></pre></td></tr></table></figure>
-<h1 id="5-调试"><a href="#5-调试" class="headerlink" title="5.调试"></a>5.调试</h1>
-          
+          <p>以前接入sdk都是别人封装好的库，直接调用方法就是了。前段时间在给团队的项目接入facebook登陆功能时，需要自己看官方demo和文档，于是也遇到了不少坑。  </p>
+<h1 id="1-下载demo"><a href="#1-下载demo" class="headerlink" title="1.下载demo"></a>1.下载demo</h1><p><a href="https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip">Facebook-ios-sdk.zip</a><br>首先从官网下载facebook sdk的demo，然后可以直接根据官网的文档进行接入。<br><a href="https://developers.facebook.com/docs/ios/getting-started#settings">https://developers.facebook.com/docs/ios/getting-started#settings</a>  </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/24/facebook-sdk-接入/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -555,12 +531,13 @@
 
       
         
-          
-            <p>今天在网上找到了下面的iOS学习路线图，一看涵盖的内容太多了，不过至少能给我这个不知道从何下手的新手一点整体的概念。每次遇到问题都是从google寻找答案的过程并不能巩固知识体系，以后可要多记录总结了。  </p>
-<h1 id="iOS学习路线"><a href="#iOS学习路线" class="headerlink" title="iOS学习路线"></a>iOS学习路线</h1><p><img src="/images/ios_route.png" alt="iOS学习路线"></p>
-<p>[图片来源： <a href="http://www.cnblogs.com/iCocos/" target="_blank" rel="external">http://www.cnblogs.com/iCocos/</a>]</p>
-
-          
+          <p>今天在网上找到了下面的iOS学习路线图，一看涵盖的内容太多了，不过至少能给我这个不知道从何下手的新手一点整体的概念。每次遇到问题都是从google寻找答案的过程并不能巩固知识体系，以后可要多记录总结了。  </p>
+<h1 id="iOS学习路线"><a href="#iOS学习路线" class="headerlink" title="iOS学习路线"></a>iOS学习路线</h1>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/24/ios-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -672,39 +649,13 @@
 
       
         
-          
-            <h2 id="1-文件扩展名"><a href="#1-文件扩展名" class="headerlink" title="1.文件扩展名"></a>1.文件扩展名</h2><p>Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |</p>
-<p>.h文件： 头文件，包含类、类型、函数、常量的声明。<br>.m文件： 源文件，可以同时包含Objective-C和C代码。<br>.mm文件：源文件，可以同时包含Objective-C、C和C++代码。  </p>
-<h2 id="2-类"><a href="#2-类" class="headerlink" title="2.类"></a>2.类</h2><pre><code>@class RootViewController;
-
-@interface MyClass : NSObject
-{
-    UIWindow *window;
-    RootViewController    *viewController;
-}
-//方法声明写在这里
-@end
-</code></pre><p>MyClass为类名，NSObject为父类名。中括号中的为成员变量声明。  </p>
-<h2 id="3-方法"><a href="#3-方法" class="headerlink" title="3.方法"></a>3.方法</h2><p>Objective-C中方法可以声明类方法和实例方法。方法声明包括方法类型、返回类型、一个或多个签名关键字、参数类型和参数名称。<br>-(void)insertObject:(id)anObject atIndex: (NSString)index;<br>(-)减号表示这是一个实例方法，对应的(+)表示类方法。(void)表示返回类型。冒号用来声明参数，如果没有参数，则只写第一个签名关键字并忽略冒号。<br>方法的调用：实例方法需要先进行实例化才能调用，类方法可以直接调用。<br>方法调用需要用到方括号语法： </p>
-<pre><code>[myClass insertObject: anObject atIndex: 0];  
-</code></pre><p>以上语句为调用myClass的insertObject方法。  </p>
-<h2 id="4-属性"><a href="#4-属性" class="headerlink" title="4.属性"></a>4.属性</h2><p>属性声明和方法声明一样，也是在类接口定义中进行，用@property表示。  </p>
-<pre><code>@property BOOL flag;  
-@property NSString *myStr;  
-@property UIView *rootView;  
-@synthesize flag;  
-@synthesize myStr;  
-@synthesize rootView;  //只声明getter方法
-</code></pre><p>@synthesize用来生成属性对应的setter和getter方法。</p>
-<h2 id="5-协议"><a href="#5-协议" class="headerlink" title="5.协议"></a>5.协议</h2><p>协议用来声明能被任何类实现的方法，但本身并不是类。  </p>
-<pre><code>@interface MyClass :NSObject&lt;UIApplicationDelegate,AnotherProtocol&gt; { }        
-@end  
-</code></pre><p>尖括号&lt;&gt;表示该类采用某个协议。协议没有父类，也没有实例变量。协议的声明只有一下一个方法：  </p>
-<pre><code>@protocol MyProtocol    
-- (void)myProtocolMethod;  
-@end    
-</code></pre>
-          
+          <h2 id="1-文件扩展名"><a href="#1-文件扩展名" class="headerlink" title="1.文件扩展名"></a>1.文件扩展名</h2><p>Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |</p>
+<p>.h文件： 头文件，包含类、类型、函数、常量的声明。<br>.m文件： 源文件，可以同时包含Objective-C和C代码。<br>.mm文件：源文件，可以同时包含Objective-C、C和C++代码。 </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/20/ios/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -797,18 +748,16 @@
 
       
         
-          
-            <p>折腾了两天终于用Hexo搭建了Blog。</p>
+          <p>折腾了两天终于用Hexo搭建了Blog。</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>会在source/_posts/ 生成My New Post.md文件，可使用markdown编辑器编辑。  </p>
 <h3 id="2-生成静态文件"><a href="#2-生成静态文件" class="headerlink" title="2.生成静态文件"></a>2.生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>会在public/下生成静态文件，可以将它们复制到任意地方。  </p>
-<h3 id="3-开启服务"><a href="#3-开启服务" class="headerlink" title="3.开启服务"></a>3.开启服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>可以在浏览器打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>进行预览。</p>
-<h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>如果一切顺利，就可以浏览网站了。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/19/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -880,7 +829,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

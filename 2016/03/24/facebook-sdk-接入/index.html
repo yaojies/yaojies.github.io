@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Santu Memo">
 <meta property="og:description" content="以前接入sdk都是别人封装好的库，直接调用方法就是了。前段时间在给团队的项目接入facebook登陆功能时，需要自己看官方demo和文档，于是也遇到了不少坑。  
 1.下载demoFacebook-ios-sdk.zip首先从官网下载facebook sdk的demo，然后可以直接根据官网的文档进行接入。https://developers.facebook.com/docs/ios/gettin">
-<meta property="og:updated_time" content="2016-03-24T17:40:59.000Z">
+<meta property="og:updated_time" content="2016-03-26T08:12:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS接入Facebook SDK登陆功能">
 <meta name="twitter:description" content="以前接入sdk都是别人封装好的库，直接调用方法就是了。前段时间在给团队的项目接入facebook登陆功能时，需要自己看官方demo和文档，于是也遇到了不少坑。  
@@ -294,6 +294,7 @@
       
         <p>以前接入sdk都是别人封装好的库，直接调用方法就是了。前段时间在给团队的项目接入facebook登陆功能时，需要自己看官方demo和文档，于是也遇到了不少坑。  </p>
 <h1 id="1-下载demo"><a href="#1-下载demo" class="headerlink" title="1.下载demo"></a>1.下载demo</h1><p><a href="https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip" target="_blank" rel="external">Facebook-ios-sdk.zip</a><br>首先从官网下载facebook sdk的demo，然后可以直接根据官网的文档进行接入。<br><a href="https://developers.facebook.com/docs/ios/getting-started#settings" target="_blank" rel="external">https://developers.facebook.com/docs/ios/getting-started#settings</a>  </p>
+<a id="more"></a>
 <h1 id="2-引入framework"><a href="#2-引入framework" class="headerlink" title="2.引入framework"></a>2.引入framework</h1><p>建立Facebook App；设置工程plist属性。<br>在plist配置Facebook App Id：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;CFBundleURLTypes&lt;/key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">  &lt;dict&gt;</span><br><span class="line">    &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">      &lt;string&gt;fb&#123;your-app-id&#125;&lt;/string&gt;</span><br><span class="line">    &lt;/array&gt;</span><br><span class="line">  &lt;/dict&gt;</span><br><span class="line">&lt;/array&gt;</span><br><span class="line">&lt;key&gt;FacebookAppID&lt;/key&gt;</span><br><span class="line">&lt;string&gt;&#123;your-app-id&#125;&lt;/string&gt;</span><br><span class="line">&lt;key&gt;FacebookDisplayName&lt;/key&gt;</span><br><span class="line">&lt;string&gt;&#123;your-app-name&#125;&lt;/string&gt;</span><br></pre></td></tr></table></figure>
 <p>添加白名单：  </p>
@@ -429,7 +430,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

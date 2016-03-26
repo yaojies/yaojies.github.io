@@ -59,20 +59,20 @@
 
 <meta name="description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
 1.property语法格式：@property (参数1, 参数2) 类型名;  
-assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objective-C 属性(@property和@synthesize)">
 <meta property="og:url" content="http://santu.space/2016/03/26/Objective-C @property/index.html">
 <meta property="og:site_name" content="Santu Memo">
 <meta property="og:description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
 1.property语法格式：@property (参数1, 参数2) 类型名;  
-assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
-<meta property="og:updated_time" content="2016-03-26T07:56:38.000Z">
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。">
+<meta property="og:updated_time" content="2016-03-26T08:11:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C 属性(@property和@synthesize)">
 <meta name="twitter:description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
 1.property语法格式：@property (参数1, 参数2) 类型名;  
-assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。">
 
 
 
@@ -297,7 +297,9 @@ assign: 简单赋值，不更改索引计数，适用于简单数据类型。ret
       
         <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
 <h2 id="1-property语法格式："><a href="#1-property语法格式：" class="headerlink" title="1.property语法格式："></a>1.property语法格式：</h2><pre><code>@property (参数1, 参数2) 类型名;  
-</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。<br>copy: 适用非共享内存。<br>atomic: 默认属性，线程安全型变量，只能有一个线程进行访问。非ARC中需要设置访问锁保证正确的get/set。<br>nonatomic: 非线程安全型变量，多个线程可同时访问，容易失控。<br>weak: 与assign对应，用于IBOutlets:  </p>
+</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。 </p>
+<a id="more"></a>
+<p>copy: 适用非共享内存。<br>atomic: 默认属性，线程安全型变量，只能有一个线程进行访问。非ARC中需要设置访问锁保证正确的get/set。<br>nonatomic: 非线程安全型变量，多个线程可同时访问，容易失控。<br>weak: 与assign对应，用于IBOutlets:  </p>
 <pre><code>@property (weak,nonatomic) IBOutlet UIButton *myButton;  
 </code></pre><p>strong: ARC中默认，等于非ARC中多retain。用于ARC:  </p>
 <pre><code>@property (strong,nonatomic)ViewController *viewController;
@@ -419,7 +421,7 @@ assign: 简单赋值，不更改索引计数，适用于简单数据类型。ret
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

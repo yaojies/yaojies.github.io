@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Objective－C,属性," />
 
 
 
@@ -57,34 +57,22 @@
 
 
 
-<meta name="description" content="折腾了两天终于用Hexo搭建了Blog。
-Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
-会在source/_posts/ 生成My New Post.md文件，可使用markdown编辑器编辑。  
-2.生成静态文件1$ hexo generate
-会在public/下生成静态文件，可以将它们复制到任意地方。  
-3.开启服务1$ hexo server
-可">
+<meta name="description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
+1.property语法格式：@property (参数1, 参数2) 类型名;  
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Hexo">
-<meta property="og:url" content="http://santu.space/2016/03/19/hello-world/index.html">
+<meta property="og:title" content="Objective-C 属性(@property和@synthesize)">
+<meta property="og:url" content="http://santu.space/2016/03/26/Objective-C @property/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="折腾了两天终于用Hexo搭建了Blog。
-Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
-会在source/_posts/ 生成My New Post.md文件，可使用markdown编辑器编辑。  
-2.生成静态文件1$ hexo generate
-会在public/下生成静态文件，可以将它们复制到任意地方。  
-3.开启服务1$ hexo server
-可">
-<meta property="og:updated_time" content="2016-03-20T18:50:26.000Z">
+<meta property="og:description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
+1.property语法格式：@property (参数1, 参数2) 类型名;  
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
+<meta property="og:updated_time" content="2016-03-26T07:56:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Hexo">
-<meta name="twitter:description" content="折腾了两天终于用Hexo搭建了Blog。
-Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
-会在source/_posts/ 生成My New Post.md文件，可使用markdown编辑器编辑。  
-2.生成静态文件1$ hexo generate
-会在public/下生成静态文件，可以将它们复制到任意地方。  
-3.开启服务1$ hexo server
-可">
+<meta name="twitter:title" content="Objective-C 属性(@property和@synthesize)">
+<meta name="twitter:description" content="@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。@synthesize则是用来生成对应声明方法的实现。  
+1.property语法格式：@property (参数1, 参数2) 类型名;  
+assign: 简单赋值，不更改索引计数，适用于简单数据类型。retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。copy: 适用">
 
 
 
@@ -102,7 +90,7 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
   };
 </script>
 
-  <title> Hello Hexo | Santu Memo </title>
+  <title> Objective-C 属性(@property和@synthesize) | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +230,7 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
             
             
               
-                Hello Hexo
+                Objective-C 属性(@property和@synthesize)
               
             
           </h1>
@@ -254,19 +242,38 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T18:32:24+08:00" content="2016-03-19">
-              2016-03-19
+            <time itemprop="dateCreated" datetime="2016-03-26T02:52:14+08:00" content="2016-03-26">
+              2016-03-26
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/19/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/03/26/Objective-C @property/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/Objective-C @property/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -288,15 +295,19 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
       
 
       
-        <p>折腾了两天终于用Hexo搭建了Blog。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>会在source/_posts/ 生成My New Post.md文件，可使用markdown编辑器编辑。  </p>
-<h3 id="2-生成静态文件"><a href="#2-生成静态文件" class="headerlink" title="2.生成静态文件"></a>2.生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>会在public/下生成静态文件，可以将它们复制到任意地方。  </p>
-<h3 id="3-开启服务"><a href="#3-开启服务" class="headerlink" title="3.开启服务"></a>3.开启服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>可以在浏览器打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>进行预览。</p>
-<h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>如果一切顺利，就可以浏览网站了。</p>
+        <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
+<h2 id="1-property语法格式："><a href="#1-property语法格式：" class="headerlink" title="1.property语法格式："></a>1.property语法格式：</h2><pre><code>@property (参数1, 参数2) 类型名;  
+</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。<br>copy: 适用非共享内存。<br>atomic: 默认属性，线程安全型变量，只能有一个线程进行访问。非ARC中需要设置访问锁保证正确的get/set。<br>nonatomic: 非线程安全型变量，多个线程可同时访问，容易失控。<br>weak: 与assign对应，用于IBOutlets:  </p>
+<pre><code>@property (weak,nonatomic) IBOutlet UIButton *myButton;  
+</code></pre><p>strong: ARC中默认，等于非ARC中多retain。用于ARC:  </p>
+<pre><code>@property (strong,nonatomic)ViewController *viewController;
+</code></pre><p>当strong类型的指针被释放掉之后，所有指向同一对象的weak指针都会被清零。<br>readonly: 只有get方法，没有set方法。<br>readwrite: 默认属性，有get/set方法。<br>unsafe_unretauined: 用于ARC，与assign相似。它只是告诉ARC如何正确地调用声明为unsafe_unretauined变量的retain和release   </p>
+<h2 id="2-property的实现方式"><a href="#2-property的实现方式" class="headerlink" title="2.@property的实现方式:"></a>2.@property的实现方式:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;  </span><br><span class="line">@interface ViewController : UIViewController  </span><br><span class="line">&#123;  </span><br><span class="line">    NSObject *obj;  </span><br><span class="line">&#125;  </span><br><span class="line">@property (nonatomic,retain) NSObject *obj;  </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>在头文件中声明属性后在实现文件中用关键字@synthesize实现getter，setter。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@implementation ViewController  </span><br><span class="line">@synthesize obj;  </span><br><span class="line">- (void)viewDidLoad  </span><br><span class="line">&#123;  </span><br><span class="line">    [super viewDidLoad];  </span><br><span class="line">    self.obj = nil;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照约定赋值方法以set开头，取值方法以实例变量名命名。当使用点语法给存取器发送消息时；get与set的语法是相同的。  </p>
+<p>总结：@property等同于在.h文件中声明实例变量的get/set方法，@synthesize等同于在.m文件中实现实例变量的get/set方法。使用@property和@synthesize创建存取器要比手动声明两个存取方法（getter和setter）更简单。而且我们在使用属性时可以使用点语法赋值或取值。  </p>
+<p><a href="http://www.linuxidc.com/Linux/2014-03/97744.htm" target="_blank" rel="external">参考资料1</a><br><a href="http://blog.csdn.net/totogo2010/article/details/7763139" target="_blank" rel="external">参考资料2</a><br><a href="http://www.cocoachina.com/ios/20150123/11003.html" target="_blank" rel="external">参考资料3</a> </p>
 
       
     </div>
@@ -309,18 +320,26 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Objective－C/" rel="tag">#Objective－C</a>
+          
+            <a href="/tags/属性/" rel="tag">#属性</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/24/facebook-sdk-接入/" rel="next" title="iOS接入Facebook SDK登陆功能">
+                <i class="fa fa-chevron-left"></i> iOS接入Facebook SDK登陆功能
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/20/ios/" rel="prev" title="iOS开发入门——Objective-C基础语法">
-                iOS开发入门——Objective-C基础语法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -346,8 +365,8 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/19/hello-world/"
-           data-title="Hello Hexo" data-url="http://santu.space/2016/03/19/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/03/26/Objective-C @property/"
+           data-title="Objective-C 属性(@property和@synthesize)" data-url="http://santu.space/2016/03/26/Objective-C @property/">
       </div>
     
   </div>
@@ -443,7 +462,7 @@ Quick Start1.新建文章1$ hexo new &quot;My New Post&quot;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-新建文章"><span class="nav-number">1.1.</span> <span class="nav-text">1.新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生成静态文件"><span class="nav-number">1.2.</span> <span class="nav-text">2.生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-开启服务"><span class="nav-number">1.3.</span> <span class="nav-text">3.开启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-部署"><span class="nav-number">1.4.</span> <span class="nav-text">4.部署</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-property语法格式："><span class="nav-number">1.</span> <span class="nav-text">1.property语法格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-property的实现方式"><span class="nav-number">2.</span> <span class="nav-text">2.@property的实现方式:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

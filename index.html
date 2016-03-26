@@ -226,6 +226,133 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/26/Objective-C @property/" itemprop="url">
+                  Objective-C 属性(@property和@synthesize)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-26T02:52:14+08:00" content="2016-03-26">
+              2016-03-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/26/Objective-C @property/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/Objective-C @property/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
+<h2 id="1-property语法格式："><a href="#1-property语法格式：" class="headerlink" title="1.property语法格式："></a>1.property语法格式：</h2><pre><code>@property (参数1, 参数2) 类型名;  
+</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。<br>copy: 适用非共享内存。<br>atomic: 默认属性，线程安全型变量，只能有一个线程进行访问。非ARC中需要设置访问锁保证正确的get/set。<br>nonatomic: 非线程安全型变量，多个线程可同时访问，容易失控。<br>weak: 与assign对应，用于IBOutlets:  </p>
+<pre><code>@property (weak,nonatomic) IBOutlet UIButton *myButton;  
+</code></pre><p>strong: ARC中默认，等于非ARC中多retain。用于ARC:  </p>
+<pre><code>@property (strong,nonatomic)ViewController *viewController;
+</code></pre><p>当strong类型的指针被释放掉之后，所有指向同一对象的weak指针都会被清零。<br>readonly: 只有get方法，没有set方法。<br>readwrite: 默认属性，有get/set方法。<br>unsafe_unretauined: 用于ARC，与assign相似。它只是告诉ARC如何正确地调用声明为unsafe_unretauined变量的retain和release   </p>
+<h2 id="2-property的实现方式"><a href="#2-property的实现方式" class="headerlink" title="2.@property的实现方式:"></a>2.@property的实现方式:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;  </span><br><span class="line">@interface ViewController : UIViewController  </span><br><span class="line">&#123;  </span><br><span class="line">    NSObject *obj;  </span><br><span class="line">&#125;  </span><br><span class="line">@property (nonatomic,retain) NSObject *obj;  </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>在头文件中声明属性后在实现文件中用关键字@synthesize实现getter，setter。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@implementation ViewController  </span><br><span class="line">@synthesize obj;  </span><br><span class="line">- (void)viewDidLoad  </span><br><span class="line">&#123;  </span><br><span class="line">    [super viewDidLoad];  </span><br><span class="line">    self.obj = nil;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照约定赋值方法以set开头，取值方法以实例变量名命名。当使用点语法给存取器发送消息时；get与set的语法是相同的。  </p>
+<p>总结：@property等同于在.h文件中声明实例变量的get/set方法，@synthesize等同于在.m文件中实现实例变量的get/set方法。使用@property和@synthesize创建存取器要比手动声明两个存取方法（getter和setter）更简单。而且我们在使用属性时可以使用点语法赋值或取值。  </p>
+<p><a href="http://www.linuxidc.com/Linux/2014-03/97744.htm" target="_blank" rel="external">参考资料1</a><br><a href="http://blog.csdn.net/totogo2010/article/details/7763139" target="_blank" rel="external">参考资料2</a><br><a href="http://www.cocoachina.com/ios/20150123/11003.html" target="_blank" rel="external">参考资料3</a> </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/24/facebook-sdk-接入/" itemprop="url">
                   iOS接入Facebook SDK登陆功能
                 </a>
@@ -388,8 +515,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
                   </a>
                 </span>
 
@@ -505,8 +632,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
                   </a>
                 </span>
 
@@ -745,7 +872,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -753,7 +880,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -762,7 +889,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

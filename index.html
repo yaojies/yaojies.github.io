@@ -294,22 +294,15 @@
 
       
         
-          
-            <p>一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是<a href="p&gt;https://bandwagonhost.com/&lt;/p">https://bandwagonhost.com/</a>  (搬瓦工)</p>
-<p>搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在<a href="https://kiwivm.64clouds.com/main.php" target="_blank" rel="external">https://kiwivm.64clouds.com/main.php</a>进行配置。这里不展开。<br>用终端安装pptp和l2tp：<br>系统采用的是CentOS6-x86。  </p>
-<h1 id="搭建pptp："><a href="#搭建pptp：" class="headerlink" title="搭建pptp："></a>搭建pptp：</h1><h2 id="1-下载安装脚本"><a href="#1-下载安装脚本" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/vpn_centos6.sh" target="_blank" rel="external">http://www.hi-vps.com/shell/vpn_centos6.sh</a><br>#chmod a+x vpn_centos6.sh</p>
-<h2 id="2-一键执行安装"><a href="#2-一键执行安装" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash vpn_centos6.sh<br>选择第一个安装VPN服务。安装完毕后会默认生成一个用户名vpn，和一个随机密码。<br>安装结束后再次运行脚本，选择3添加用户名和密码。<br>如果vpn发生错误，可以运行该脚本选择2修复vpn，然后重启vps（可能不需要重启）。</p>
-<h2 id="3-常见错误"><a href="#3-常见错误" class="headerlink" title="3.常见错误"></a>3.常见错误</h2><p>VPN连接过程可能有很多错误，下面是一些VPN连接错误的原因：<br>691错误：用户名或密码错误。<br>619错误：上层路由器不支持GRE协议。您所在网络的路由器不支持，请更换路由器，或者使用L2TP连接。<br>742错误：服务器不支持加密连接。取消加密即可。<br>错误678、错误800：服务器未开启vpn服务或远程计算机无响应。  </p>
-<h1 id="搭建L2TP："><a href="#搭建L2TP：" class="headerlink" title="搭建L2TP："></a>搭建L2TP：</h1><h2 id="1-下载安装脚本-1"><a href="#1-下载安装脚本-1" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/l2tp_centos.sh" target="_blank" rel="external">http://www.hi-vps.com/shell/l2tp_centos.sh</a><br>#chmod 777 l2tp_centos.sh</p>
-<h2 id="2-一键执行安装-1"><a href="#2-一键执行安装-1" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash l2tp_centos.sh<br>会有三个选择：</p>
-<ol>
-<li>安装l2tp VPN</li>
-<li>修复VPN</li>
-<li>添加VPN用户<br>后面的操作与pptp相同。  </li>
-</ol>
-<p>安装l2tp的时候会remove pptp。  </p>
-
-          
+          <p>一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是<a href="p&gt;https://bandwagonhost.com/&lt;/p">https://bandwagonhost.com/</a>  (搬瓦工)</p>
+<p>搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在<a href="https://kiwivm.64clouds.com/main.php">https://kiwivm.64clouds.com/main.php</a>进行配置。这里不展开。<br>用终端安装pptp和l2tp：<br>系统采用的是CentOS6-x86。  </p>
+<h1 id="搭建pptp："><a href="#搭建pptp：" class="headerlink" title="搭建pptp："></a>搭建pptp：</h1><h2 id="1-下载安装脚本"><a href="#1-下载安装脚本" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/vpn_centos6.sh">http://www.hi-vps.com/shell/vpn_centos6.sh</a><br>#chmod a+x vpn_centos6.sh</p>
+<h2 id="2-一键执行安装"><a href="#2-一键执行安装" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash vpn_centos6.sh<br>选择第一个安装VPN服务。安装完毕后会默认生成一个用户名vpn，和一个随机密码。<br>安装结束后再次运行脚本，选择3添加用户名和密码。<br>如果vpn发生错误，可以运行该脚本选择2修复vpn，然后重启vps（可能不需要重启）。  </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/27/vps_vpn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

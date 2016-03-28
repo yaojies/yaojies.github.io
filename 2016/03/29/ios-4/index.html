@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vps,vpn," />
+  <meta name="keywords" content="ios," />
 
 
 
@@ -57,22 +57,25 @@
 
 
 
-<meta name="description" content="一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是https://bandwagonhost.com/  (搬瓦工)
-搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在https://kiwivm.64clouds.com/main.php进行配置。这里不展开。用终端安装pptp和l2tp：系统采用的是CentOS6-x86。  
-搭建pptp：1.下">
+<meta name="description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
+1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
+2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+1234//.m文件，将Slider关联到方法- (IBAction)slide">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vps搭建vpn">
-<meta property="og:url" content="http://santu.space/2016/03/27/vps_vpn/index.html">
+<meta property="og:title" content="ios开发－滑动条">
+<meta property="og:url" content="http://santu.space/2016/03/29/ios-4/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是https://bandwagonhost.com/  (搬瓦工)
-搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在https://kiwivm.64clouds.com/main.php进行配置。这里不展开。用终端安装pptp和l2tp：系统采用的是CentOS6-x86。  
-搭建pptp：1.下">
-<meta property="og:updated_time" content="2016-03-27T15:58:25.000Z">
+<meta property="og:description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
+1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
+2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+1234//.m文件，将Slider关联到方法- (IBAction)slide">
+<meta property="og:updated_time" content="2016-03-28T16:11:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vps搭建vpn">
-<meta name="twitter:description" content="一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是https://bandwagonhost.com/  (搬瓦工)
-搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在https://kiwivm.64clouds.com/main.php进行配置。这里不展开。用终端安装pptp和l2tp：系统采用的是CentOS6-x86。  
-搭建pptp：1.下">
+<meta name="twitter:title" content="ios开发－滑动条">
+<meta name="twitter:description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
+1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
+2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+1234//.m文件，将Slider关联到方法- (IBAction)slide">
 
 
 
@@ -90,7 +93,7 @@
   };
 </script>
 
-  <title> vps搭建vpn | Santu Memo </title>
+  <title> ios开发－滑动条 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +233,7 @@
             
             
               
-                vps搭建vpn
+                ios开发－滑动条
               
             
           </h1>
@@ -242,8 +245,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-27T23:25:10+08:00" content="2016-03-27">
-              2016-03-27
+            <time itemprop="dateCreated" datetime="2016-03-29T00:00:10+08:00" content="2016-03-29">
+              2016-03-29
             </time>
           </span>
 
@@ -256,8 +259,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/vps/" itemprop="url" rel="index">
-                    <span itemprop="name">vps</span>
+                  <a href="/categories/ios开发/" itemprop="url" rel="index">
+                    <span itemprop="name">ios开发</span>
                   </a>
                 </span>
 
@@ -272,8 +275,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/27/vps_vpn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/27/vps_vpn/" itemprop="commentsCount"></span>
+                <a href="/2016/03/29/ios-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/ios-4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -295,20 +298,11 @@
       
 
       
-        <p>一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是<a href="p&gt;https://bandwagonhost.com/&lt;/p">https://bandwagonhost.com/</a>  (搬瓦工)</p>
-<p>搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在<a href="https://kiwivm.64clouds.com/main.php" target="_blank" rel="external">https://kiwivm.64clouds.com/main.php</a>进行配置。这里不展开。<br>用终端安装pptp和l2tp：<br>系统采用的是CentOS6-x86。  </p>
-<h1 id="搭建pptp："><a href="#搭建pptp：" class="headerlink" title="搭建pptp："></a>搭建pptp：</h1><h2 id="1-下载安装脚本"><a href="#1-下载安装脚本" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/vpn_centos6.sh" target="_blank" rel="external">http://www.hi-vps.com/shell/vpn_centos6.sh</a><br>#chmod a+x vpn_centos6.sh</p>
-<h2 id="2-一键执行安装"><a href="#2-一键执行安装" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash vpn_centos6.sh<br>选择第一个安装VPN服务。安装完毕后会默认生成一个用户名vpn，和一个随机密码。<br>安装结束后再次运行脚本，选择3添加用户名和密码。<br>如果vpn发生错误，可以运行该脚本选择2修复vpn，然后重启vps（可能不需要重启）。  </p>
-<a id="more"></a>
-<h2 id="3-常见错误"><a href="#3-常见错误" class="headerlink" title="3.常见错误"></a>3.常见错误</h2><p>VPN连接过程可能有很多错误，下面是一些VPN连接错误的原因：<br>691错误：用户名或密码错误。<br>619错误：上层路由器不支持GRE协议。您所在网络的路由器不支持，请更换路由器，或者使用L2TP连接。<br>742错误：服务器不支持加密连接。取消加密即可。<br>错误678、错误800：服务器未开启vpn服务或远程计算机无响应。  </p>
-<h1 id="搭建L2TP："><a href="#搭建L2TP：" class="headerlink" title="搭建L2TP："></a>搭建L2TP：</h1><h2 id="1-下载安装脚本-1"><a href="#1-下载安装脚本-1" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/l2tp_centos.sh" target="_blank" rel="external">http://www.hi-vps.com/shell/l2tp_centos.sh</a><br>#chmod 777 l2tp_centos.sh</p>
-<h2 id="2-一键执行安装-1"><a href="#2-一键执行安装-1" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash l2tp_centos.sh<br>会有三个选择：</p>
-<ol>
-<li>安装l2tp VPN</li>
-<li>修复VPN</li>
-<li>添加VPN用户<br>后面的操作与pptp相同。  </li>
-</ol>
-<p>安装l2tp后发现pptp不能用了。看一下脚本中果然有remove了pptp。暂且先用着pptp了，  </p>
+        <p>实现滑动条河标签关联，标签实时显示滑动条位置。  </p>
+<h1 id="1-添加滑动条和标签"><a href="#1-添加滑动条和标签" class="headerlink" title="1.添加滑动条和标签"></a>1.添加滑动条和标签</h1><p>在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  </p>
+<h1 id="2-添加属性和方法"><a href="#2-添加属性和方法" class="headerlink" title="2.添加属性和方法"></a>2.添加属性和方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//.h文件中，Label属性</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//.m文件，将Slider关联到方法</span><br><span class="line">- (IBAction)sliderChanged:(UISlider *)sender &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-实现方法"><a href="#3-实现方法" class="headerlink" title="3.实现方法"></a>3.实现方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // 保证标签初始值正确显示滑动条值  </span><br><span class="line">    self.sliderLabel.text = @&quot;50&quot;;</span><br><span class="line">&#125;    </span><br><span class="line">//Slider 方法</span><br><span class="line">- (IBAction)sliderChanged:(UISlider *)sender &#123;</span><br><span class="line">    int progress = (int)lroundf(sender.value);</span><br><span class="line">    self.sliderLabel.text = [NSString stringWithFormat:@&quot;%d&quot;, progress];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -323,9 +317,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vps/" rel="tag">#vps</a>
-          
-            <a href="/tags/vpn/" rel="tag">#vpn</a>
+            <a href="/tags/ios/" rel="tag">#ios</a>
           
         </div>
       
@@ -334,17 +326,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/26/Objective-C @property/" rel="next" title="Objective-C 属性(@property和@synthesize)">
-                <i class="fa fa-chevron-left"></i> Objective-C 属性(@property和@synthesize)
+              <a href="/2016/03/28/ios-3/" rel="next" title="ios开发－关闭键盘">
+                <i class="fa fa-chevron-left"></i> ios开发－关闭键盘
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/28/ios-3/" rel="prev" title="ios开发－关闭键盘">
-                ios开发－关闭键盘 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +358,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/27/vps_vpn/"
-           data-title="vps搭建vpn" data-url="http://santu.space/2016/03/27/vps_vpn/">
+      <div class="ds-thread" data-thread-key="2016/03/29/ios-4/"
+           data-title="ios开发－滑动条" data-url="http://santu.space/2016/03/29/ios-4/">
       </div>
     
   </div>
@@ -467,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建pptp："><span class="nav-number">1.</span> <span class="nav-text">搭建pptp：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载安装脚本"><span class="nav-number">1.1.</span> <span class="nav-text">1.下载安装脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-一键执行安装"><span class="nav-number">1.2.</span> <span class="nav-text">2.一键执行安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-常见错误"><span class="nav-number">1.3.</span> <span class="nav-text">3.常见错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建L2TP："><span class="nav-number">2.</span> <span class="nav-text">搭建L2TP：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载安装脚本-1"><span class="nav-number">2.1.</span> <span class="nav-text">1.下载安装脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-一键执行安装-1"><span class="nav-number">2.2.</span> <span class="nav-text">2.一键执行安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-添加滑动条和标签"><span class="nav-number">1.</span> <span class="nav-text">1.添加滑动条和标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-添加属性和方法"><span class="nav-number">2.</span> <span class="nav-text">2.添加属性和方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-实现方法"><span class="nav-number">3.</span> <span class="nav-text">3.实现方法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

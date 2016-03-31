@@ -57,25 +57,19 @@
 
 
 
-<meta name="description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
-1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
-2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
-1234//.m文件，将Slider关联到方法- (IBAction)slide">
+<meta name="description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
+1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios开发－滑动条">
-<meta property="og:url" content="http://santu.space/2016/03/29/ios-4/index.html">
+<meta property="og:title" content="ios开发－快速生成icon和launchimage">
+<meta property="og:url" content="http://santu.space/2016/03/30/ios开发－快速生成icon和launchimage/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
-1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
-2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
-1234//.m文件，将Slider关联到方法- (IBAction)slide">
-<meta property="og:updated_time" content="2016-03-28T16:11:18.000Z">
+<meta property="og:description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
+1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
+<meta property="og:updated_time" content="2016-03-30T15:22:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios开发－滑动条">
-<meta name="twitter:description" content="实现滑动条河标签关联，标签实时显示滑动条位置。  
-1.添加滑动条和标签在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  
-2.添加属性和方法12//.h文件中，Label属性@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
-1234//.m文件，将Slider关联到方法- (IBAction)slide">
+<meta name="twitter:title" content="ios开发－快速生成icon和launchimage">
+<meta name="twitter:description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
+1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
 
 
 
@@ -93,7 +87,7 @@
   };
 </script>
 
-  <title> ios开发－滑动条 | Santu Memo </title>
+  <title> ios开发－快速生成icon和launchimage | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -233,7 +227,7 @@
             
             
               
-                ios开发－滑动条
+                ios开发－快速生成icon和launchimage
               
             
           </h1>
@@ -245,8 +239,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T00:00:10+08:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2016-03-30T22:03:05+08:00" content="2016-03-30">
+              2016-03-30
             </time>
           </span>
 
@@ -275,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/29/ios-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/ios-4/" itemprop="commentsCount"></span>
+                <a href="/2016/03/30/ios开发－快速生成icon和launchimage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/ios开发－快速生成icon和launchimage/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,12 +292,8 @@
       
 
       
-        <p>实现滑动条河标签关联，标签实时显示滑动条位置。  </p>
-<h1 id="1-添加滑动条和标签"><a href="#1-添加滑动条和标签" class="headerlink" title="1.添加滑动条和标签"></a>1.添加滑动条和标签</h1><p>在View视图中拖入一个滑动条(Slider)和一个标签(Label)。  </p>
-<h1 id="2-添加属性和方法"><a href="#2-添加属性和方法" class="headerlink" title="2.添加属性和方法"></a>2.添加属性和方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//.h文件中，Label属性</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//.m文件，将Slider关联到方法</span><br><span class="line">- (IBAction)sliderChanged:(UISlider *)sender &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-实现方法"><a href="#3-实现方法" class="headerlink" title="3.实现方法"></a>3.实现方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // 保证标签初始值正确显示滑动条值  </span><br><span class="line">    self.sliderLabel.text = @&quot;50&quot;;</span><br><span class="line">&#125;    </span><br><span class="line">//Slider 方法</span><br><span class="line">- (IBAction)sliderChanged:(UISlider *)sender &#123;</span><br><span class="line">    int progress = (int)lroundf(sender.value);</span><br><span class="line">    self.sliderLabel.text = [NSString stringWithFormat:@&quot;%d&quot;, progress];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。<br>网上有很多免费的工具可以一键生成icon。  </p>
+<h2 id="1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"><a href="#1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。" class="headerlink" title="1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"></a>1.推荐<a href="http://icon.wuruihong.com" target="_blank" rel="external">图标工厂</a>，可以一键生成所有需要的ios或者android的icon。</h2><h2 id="2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。"><a href="#2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。" class="headerlink" title="2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。"></a>2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。</h2><h2 id="3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。"><a href="#3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。" class="headerlink" title="3.Github上有一个很方便的工具ios-image-util。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。"></a>3.Github上有一个很方便的工具<a href="https://github.com/gootara-org/ios-image-util" target="_blank" rel="external">ios-image-util</a>。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。</h2>
       
     </div>
 
@@ -326,16 +316,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/28/ios-3/" rel="next" title="ios开发－关闭键盘">
-                <i class="fa fa-chevron-left"></i> ios开发－关闭键盘
+              <a href="/2016/03/29/ios开发－滑动条/" rel="next" title="ios开发－滑动条">
+                <i class="fa fa-chevron-left"></i> ios开发－滑动条
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/30/ios-5/" rel="prev" title="ios开发－快速生成icon和launchimage">
-                ios开发－快速生成icon和launchimage <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/31/ios开发——操作表单和警告视图/" rel="prev" title="ios开发——操作表单和警告视图">
+                ios开发——操作表单和警告视图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -362,8 +352,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/29/ios-4/"
-           data-title="ios开发－滑动条" data-url="http://santu.space/2016/03/29/ios-4/">
+      <div class="ds-thread" data-thread-key="2016/03/30/ios开发－快速生成icon和launchimage/"
+           data-title="ios开发－快速生成icon和launchimage" data-url="http://santu.space/2016/03/30/ios开发－快速生成icon和launchimage/">
       </div>
     
   </div>
@@ -459,7 +449,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-添加滑动条和标签"><span class="nav-number">1.</span> <span class="nav-text">1.添加滑动条和标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-添加属性和方法"><span class="nav-number">2.</span> <span class="nav-text">2.添加属性和方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-实现方法"><span class="nav-number">3.</span> <span class="nav-text">3.实现方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"><span class="nav-number">1.</span> <span class="nav-text">1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。"><span class="nav-number">2.</span> <span class="nav-text">2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。"><span class="nav-number">3.</span> <span class="nav-text">3.Github上有一个很方便的工具ios-image-util。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

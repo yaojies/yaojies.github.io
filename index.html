@@ -226,7 +226,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/31/ios-6/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/31/ios开发——操作表单和警告视图/" itemprop="url">
                   ios开发——操作表单和警告视图
                 </a>
               
@@ -270,8 +270,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/31/ios-6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/ios-6/" itemprop="commentsCount"></span>
+                <a href="/2016/03/31/ios开发——操作表单和警告视图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/ios开发——操作表单和警告视图/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,15 +294,13 @@
 
       
         
-          
-            <h1 id="1-操作表单"><a href="#1-操作表单" class="headerlink" title="1.操作表单"></a>1.操作表单</h1><p>操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。<br>在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  </p>
+          <h1 id="1-操作表单"><a href="#1-操作表单" class="headerlink" title="1.操作表单"></a>1.操作表单</h1><p>操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。<br>在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)buttonPressed:(UIButton *)sender &#123;</span><br><span class="line">    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@&quot;Are you sure?&quot; message:nil preferredStyle:UIAlertControllerStyleActionSheet];  </span><br><span class="line"></span><br><span class="line">    //加入yesAction按钮</span><br><span class="line">    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@&quot;Yes I&apos;m sure!&quot; style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) &#123;</span><br><span class="line">        NSString *msg;</span><br><span class="line">        if ([self.numberField.text length] &gt; 0) &#123;</span><br><span class="line">            msg = [NSString stringWithFormat:@&quot;Are you sure the number is %@?&quot;, self.numberField.text];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            msg = @&quot;Please input the number!&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        UIAlertController *controller2 = [UIAlertController alertControllerWithTitle:@&quot;Something was done.&quot; message:msg preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;OK!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">        [controller2 addAction:cancelAction];</span><br><span class="line">        [self presentViewController:controller2 animated:YES completion:nil];</span><br><span class="line">    &#125;];  </span><br><span class="line">    </span><br><span class="line">    //加入noAction按钮</span><br><span class="line">    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@&quot;I&apos;m not sure!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">    [controller addAction:yesAction];</span><br><span class="line">    [controller addAction:noAction];</span><br><span class="line">    </span><br><span class="line">    //获取警告控制器的悬浮展示控制器</span><br><span class="line">    UIPopoverPresentationController *ppc = controller.popoverPresentationController;</span><br><span class="line">    if (ppc != nil) &#123;</span><br><span class="line">        ppc.sourceView = sender;</span><br><span class="line">        ppc.sourceRect = sender.bounds;</span><br><span class="line">    &#125;</span><br><span class="line">    [self presentViewController:controller animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>UIAlertController时视图控制器的子类，可以用来显示操作表单或警告视图。<br>警告控制器默认不提供按钮，需要创建UIAlertAction对象并加入视图控制器。<br>按钮类型：UIAlertActionStyleDestructive：红色粗体显示，通常用于指示不可逆操作；<br>UIAlertActionStyleDefult：蓝色字体显示，通常用于普通按钮；<br>UIAlertActionStyleCancel：蓝色粗体显示，通常用于取消按钮，iPad上不会显示这个类型的按钮，可以点击周围位置关闭悬浮视图。<br><img src="https://github.com/yaojies/yaojies.github.io/tree/master/images/ios-6-1.png" alt="image"></p>
-<h1 id="2-警告视图"><a href="#2-警告视图" class="headerlink" title="2.警告视图"></a>2.警告视图</h1><p>警告视图出现在屏幕中央，可以显示一个或多个按钮。用户也必须进行选择才能继续使用应用。<br>警告视图的创建和操作表单非常类似。警告视图都会出现在屏幕中央，不需要设置悬浮展示控制器。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)showAlertView:(id)sender &#123;</span><br><span class="line">    UIAlertController *controller2 = [UIAlertController alertControllerWithTitle:@&quot;Something was done.&quot; message:@&quot;something was done!&quot; preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;OK!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">    [controller2 addAction:cancelAction];</span><br><span class="line">    [self presentViewController:controller2 animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述代码即为显示一个警告视图。  </p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/31/ios开发——操作表单和警告视图/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -346,7 +344,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/30/ios-5/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/30/ios开发－快速生成icon和launchimage/" itemprop="url">
                   ios开发－快速生成icon和launchimage
                 </a>
               
@@ -390,8 +388,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/30/ios-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/ios-5/" itemprop="commentsCount"></span>
+                <a href="/2016/03/30/ios开发－快速生成icon和launchimage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/ios开发－快速生成icon和launchimage/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -461,7 +459,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/29/ios-4/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/29/ios开发－滑动条/" itemprop="url">
                   ios开发－滑动条
                 </a>
               
@@ -505,8 +503,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/29/ios-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/ios-4/" itemprop="commentsCount"></span>
+                <a href="/2016/03/29/ios开发－滑动条/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/ios开发－滑动条/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -580,7 +578,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/28/ios-3/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/28/ios开发－关闭键盘/" itemprop="url">
                   ios开发－关闭键盘
                 </a>
               
@@ -624,8 +622,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/28/ios-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/ios-3/" itemprop="commentsCount"></span>
+                <a href="/2016/03/28/ios开发－关闭键盘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/ios开发－关闭键盘/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -653,7 +651,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//ViewController.m</span><br><span class="line">//点击Done关闭键盘</span><br><span class="line">- (IBAction)textFieldDoneEditing:(id)sender &#123;</span><br><span class="line">	//放弃第一响应者控制权</span><br><span class="line">    [sender resignFirstResponder];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在布局文件中将TextField对Did End On Exit事件关联上述方法。<br>测试通过。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/28/ios-3/#more" rel="contents">
+            <a class="btn" href="/2016/03/28/ios开发－关闭键盘/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1057,7 +1055,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/24/ios-2/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/24/iOS开发学习路线/" itemprop="url">
                   iOS开发学习路线
                 </a>
               
@@ -1101,8 +1099,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/24/ios-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/ios-2/" itemprop="commentsCount"></span>
+                <a href="/2016/03/24/iOS开发学习路线/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/iOS开发学习路线/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1128,7 +1126,7 @@
           <p>今天在网上找到了下面的iOS学习路线图，一看涵盖的内容太多了，不过至少能给我这个不知道从何下手的新手一点整体的概念。每次遇到问题都是从google寻找答案的过程并不能巩固知识体系，以后可要多记录总结了。  </p>
 <h1 id="iOS学习路线"><a href="#iOS学习路线" class="headerlink" title="iOS学习路线"></a>iOS学习路线</h1>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/24/ios-2/#more" rel="contents">
+            <a class="btn" href="/2016/03/24/iOS开发学习路线/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1175,7 +1173,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/20/ios/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/20/iOS开发入门——Objective-C基础语法/" itemprop="url">
                   iOS开发入门——Objective-C基础语法
                 </a>
               
@@ -1219,8 +1217,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/20/ios/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/ios/" itemprop="commentsCount"></span>
+                <a href="/2016/03/20/iOS开发入门——Objective-C基础语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/iOS开发入门——Objective-C基础语法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1246,7 +1244,7 @@
           <h2 id="1-文件扩展名"><a href="#1-文件扩展名" class="headerlink" title="1.文件扩展名"></a>1.文件扩展名</h2><p>Objective-C是C语言的超集，类似于C语言，Objective-C中用.h表示头文件，源文件可以是以.m, .mm扩展名文件                                |</p>
 <p>.h文件： 头文件，包含类、类型、函数、常量的声明。<br>.m文件： 源文件，可以同时包含Objective-C和C代码。<br>.mm文件：源文件，可以同时包含Objective-C、C和C++代码。 </p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/20/ios/#more" rel="contents">
+            <a class="btn" href="/2016/03/20/iOS开发入门——Objective-C基础语法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1293,7 +1291,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/19/hello-world/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/19/Hello Hexo/" itemprop="url">
                   Hello Hexo
                 </a>
               
@@ -1318,8 +1316,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/19/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/03/19/Hello Hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/Hello Hexo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1348,7 +1346,7 @@
 <h3 id="2-生成静态文件"><a href="#2-生成静态文件" class="headerlink" title="2.生成静态文件"></a>2.生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>会在public/下生成静态文件，可以将它们复制到任意地方。  </p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/19/hello-world/#more" rel="contents">
+            <a class="btn" href="/2016/03/19/Hello Hexo/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

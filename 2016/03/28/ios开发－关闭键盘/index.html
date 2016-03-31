@@ -57,21 +57,22 @@
 
 
 
-<meta name="description" content="1.操作表单操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  
-123456789101112131415161718192021222324252627282930- (IBAction)buttonPressed:(">
+<meta name="description" content="刚接触ios开发，对oc也只是一知半解。刚开始往往是创建一个布局文件，往其中添加输入框，但是在测试过程中发现，不知道怎么关闭键盘。  
+1.按下Done按钮关闭键盘在ViewController.m中添加如下代码：  
+123456//ViewController.m//点击Done关闭键盘- (IBAction)textFieldDoneEditing:(id)sender &amp;#123;	//放">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios开发——操作表单和警告视图">
-<meta property="og:url" content="http://santu.space/2016/03/31/ios-6/index.html">
+<meta property="og:title" content="ios开发－关闭键盘">
+<meta property="og:url" content="http://santu.space/2016/03/28/ios开发－关闭键盘/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="1.操作表单操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  
-123456789101112131415161718192021222324252627282930- (IBAction)buttonPressed:(">
-<meta property="og:image" content="https://github.com/yaojies/yaojies.github.io/tree/master/images/ios-6-1.png">
-<meta property="og:updated_time" content="2016-03-31T17:44:41.000Z">
+<meta property="og:description" content="刚接触ios开发，对oc也只是一知半解。刚开始往往是创建一个布局文件，往其中添加输入框，但是在测试过程中发现，不知道怎么关闭键盘。  
+1.按下Done按钮关闭键盘在ViewController.m中添加如下代码：  
+123456//ViewController.m//点击Done关闭键盘- (IBAction)textFieldDoneEditing:(id)sender &amp;#123;	//放">
+<meta property="og:updated_time" content="2016-03-28T14:47:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios开发——操作表单和警告视图">
-<meta name="twitter:description" content="1.操作表单操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  
-123456789101112131415161718192021222324252627282930- (IBAction)buttonPressed:(">
-<meta name="twitter:image" content="https://github.com/yaojies/yaojies.github.io/tree/master/images/ios-6-1.png">
+<meta name="twitter:title" content="ios开发－关闭键盘">
+<meta name="twitter:description" content="刚接触ios开发，对oc也只是一知半解。刚开始往往是创建一个布局文件，往其中添加输入框，但是在测试过程中发现，不知道怎么关闭键盘。  
+1.按下Done按钮关闭键盘在ViewController.m中添加如下代码：  
+123456//ViewController.m//点击Done关闭键盘- (IBAction)textFieldDoneEditing:(id)sender &amp;#123;	//放">
 
 
 
@@ -89,7 +90,7 @@
   };
 </script>
 
-  <title> ios开发——操作表单和警告视图 | Santu Memo </title>
+  <title> ios开发－关闭键盘 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -229,7 +230,7 @@
             
             
               
-                ios开发——操作表单和警告视图
+                ios开发－关闭键盘
               
             
           </h1>
@@ -241,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T23:23:00+08:00" content="2016-03-31">
-              2016-03-31
+            <time itemprop="dateCreated" datetime="2016-03-28T21:04:58+08:00" content="2016-03-28">
+              2016-03-28
             </time>
           </span>
 
@@ -271,8 +272,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/31/ios-6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/ios-6/" itemprop="commentsCount"></span>
+                <a href="/2016/03/28/ios开发－关闭键盘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/ios开发－关闭键盘/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,12 +295,20 @@
       
 
       
-        <h1 id="1-操作表单"><a href="#1-操作表单" class="headerlink" title="1.操作表单"></a>1.操作表单</h1><p>操作表单从屏幕底部出现，显示一些按钮（iPad上会以悬浮视图显示）。用户必须点击才能继续使用应用。通常用于提示一些危险操作比如删除。<br>在布局文件中加入一个按钮，病关联到ViewController.m中的方法，方法实现代码如下：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)buttonPressed:(UIButton *)sender &#123;</span><br><span class="line">    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@&quot;Are you sure?&quot; message:nil preferredStyle:UIAlertControllerStyleActionSheet];  </span><br><span class="line"></span><br><span class="line">    //加入yesAction按钮</span><br><span class="line">    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@&quot;Yes I&apos;m sure!&quot; style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) &#123;</span><br><span class="line">        NSString *msg;</span><br><span class="line">        if ([self.numberField.text length] &gt; 0) &#123;</span><br><span class="line">            msg = [NSString stringWithFormat:@&quot;Are you sure the number is %@?&quot;, self.numberField.text];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            msg = @&quot;Please input the number!&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        UIAlertController *controller2 = [UIAlertController alertControllerWithTitle:@&quot;Something was done.&quot; message:msg preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;OK!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">        [controller2 addAction:cancelAction];</span><br><span class="line">        [self presentViewController:controller2 animated:YES completion:nil];</span><br><span class="line">    &#125;];  </span><br><span class="line">    </span><br><span class="line">    //加入noAction按钮</span><br><span class="line">    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@&quot;I&apos;m not sure!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">    [controller addAction:yesAction];</span><br><span class="line">    [controller addAction:noAction];</span><br><span class="line">    </span><br><span class="line">    //获取警告控制器的悬浮展示控制器</span><br><span class="line">    UIPopoverPresentationController *ppc = controller.popoverPresentationController;</span><br><span class="line">    if (ppc != nil) &#123;</span><br><span class="line">        ppc.sourceView = sender;</span><br><span class="line">        ppc.sourceRect = sender.bounds;</span><br><span class="line">    &#125;</span><br><span class="line">    [self presentViewController:controller animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>UIAlertController时视图控制器的子类，可以用来显示操作表单或警告视图。<br>警告控制器默认不提供按钮，需要创建UIAlertAction对象并加入视图控制器。<br>按钮类型：UIAlertActionStyleDestructive：红色粗体显示，通常用于指示不可逆操作；<br>UIAlertActionStyleDefult：蓝色字体显示，通常用于普通按钮；<br>UIAlertActionStyleCancel：蓝色粗体显示，通常用于取消按钮，iPad上不会显示这个类型的按钮，可以点击周围位置关闭悬浮视图。<br><img src="https://github.com/yaojies/yaojies.github.io/tree/master/images/ios-6-1.png" alt="image"></p>
-<h1 id="2-警告视图"><a href="#2-警告视图" class="headerlink" title="2.警告视图"></a>2.警告视图</h1><p>警告视图出现在屏幕中央，可以显示一个或多个按钮。用户也必须进行选择才能继续使用应用。<br>警告视图的创建和操作表单非常类似。警告视图都会出现在屏幕中央，不需要设置悬浮展示控制器。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)showAlertView:(id)sender &#123;</span><br><span class="line">    UIAlertController *controller2 = [UIAlertController alertControllerWithTitle:@&quot;Something was done.&quot; message:@&quot;something was done!&quot; preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;OK!&quot; style:UIAlertActionStyleCancel handler:nil];</span><br><span class="line">    [controller2 addAction:cancelAction];</span><br><span class="line">    [self presentViewController:controller2 animated:YES completion:nil];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述代码即为显示一个警告视图。  </p>
+        <p>刚接触ios开发，对oc也只是一知半解。刚开始往往是创建一个布局文件，往其中添加输入框，但是在测试过程中发现，不知道怎么关闭键盘。  </p>
+<h1 id="1-按下Done按钮关闭键盘"><a href="#1-按下Done按钮关闭键盘" class="headerlink" title="1.按下Done按钮关闭键盘"></a>1.按下Done按钮关闭键盘</h1><p>在ViewController.m中添加如下代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//ViewController.m</span><br><span class="line">//点击Done关闭键盘</span><br><span class="line">- (IBAction)textFieldDoneEditing:(id)sender &#123;</span><br><span class="line">	//放弃第一响应者控制权</span><br><span class="line">    [sender resignFirstResponder];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在布局文件中将TextField对Did End On Exit事件关联上述方法。<br>测试通过。</p>
+<a id="more"></a>
+<h1 id="2-触摸背景关闭键盘"><a href="#2-触摸背景关闭键盘" class="headerlink" title="2.触摸背景关闭键盘"></a>2.触摸背景关闭键盘</h1><p>在ViewController.m中添加如下代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//ViewController.m</span><br><span class="line">//点击背景关闭键盘</span><br><span class="line">- (IBAction)backgroundTap:(id)sender &#123;</span><br><span class="line">    [self.textFieldOne resignFirstResponder];</span><br><span class="line">    [self.textFieldTwo resignFirstResponder];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改变布局文件中View容器的Class字段为UIControl。UIControl为UIView的子类，而所有能触发操作方法的控件都是UIControl的子类。然后View容器名称就会变成了Control。将该Control关联检查器中的Touch Down关联到上述方法。<br>如果出现错误： <em>*</em> Terminating app due to uncaught exception ‘NSInvalidArgumentException’, reason: ‘-[UITextInputTraits resignFirstResponder]: unrecognized selector sent to instance<br>可能是没有正确声明或者实现，检查：<br>1.UITextField的Outlet一定要是weak的属性（一般的Outlet都是weak的）；  </p>
+<pre><code>//.h文件中
+@property (weak, nonatomic) IBOutlet UITextField *title;
+</code></pre><p>2.m文件中是否对textField实现@synthesize。  </p>
+<pre><code>//.m文件  
+@synthesize title;
+</code></pre><p>测试通过。</p>
 
       
     </div>
@@ -323,13 +332,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/30/ios-5/" rel="next" title="ios开发－快速生成icon和launchimage">
-                <i class="fa fa-chevron-left"></i> ios开发－快速生成icon和launchimage
+              <a href="/2016/03/27/vps_vpn/" rel="next" title="vps搭建vpn">
+                <i class="fa fa-chevron-left"></i> vps搭建vpn
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/29/ios开发－滑动条/" rel="prev" title="ios开发－滑动条">
+                ios开发－滑动条 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -355,8 +368,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/31/ios-6/"
-           data-title="ios开发——操作表单和警告视图" data-url="http://santu.space/2016/03/31/ios-6/">
+      <div class="ds-thread" data-thread-key="2016/03/28/ios开发－关闭键盘/"
+           data-title="ios开发－关闭键盘" data-url="http://santu.space/2016/03/28/ios开发－关闭键盘/">
       </div>
     
   </div>
@@ -452,7 +465,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-操作表单"><span class="nav-number">1.</span> <span class="nav-text">1.操作表单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-警告视图"><span class="nav-number">2.</span> <span class="nav-text">2.警告视图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-按下Done按钮关闭键盘"><span class="nav-number">1.</span> <span class="nav-text">1.按下Done按钮关闭键盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-触摸背景关闭键盘"><span class="nav-number">2.</span> <span class="nav-text">2.触摸背景关闭键盘</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

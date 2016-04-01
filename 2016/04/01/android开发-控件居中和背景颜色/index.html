@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
-1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
+<meta name="description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
+2.背景颜色如果需要改变控件的背景">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios开发－快速生成icon和launchimage">
-<meta property="og:url" content="http://santu.space/2016/03/30/ios开发－快速生成icon和launchimage/index.html">
+<meta property="og:title" content="android开发-控件居中和背景颜色">
+<meta property="og:url" content="http://santu.space/2016/04/01/android开发-控件居中和背景颜色/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
-1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
-<meta property="og:updated_time" content="2016-03-31T18:02:25.000Z">
+<meta property="og:description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
+2.背景颜色如果需要改变控件的背景">
+<meta property="og:updated_time" content="2016-04-01T14:32:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios开发－快速生成icon和launchimage">
-<meta name="twitter:description" content="ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。网上有很多免费的工具可以一键生成icon。  
-1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，">
+<meta name="twitter:title" content="android开发-控件居中和背景颜色">
+<meta name="twitter:description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
+2.背景颜色如果需要改变控件的背景">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> ios开发－快速生成icon和launchimage | Santu Memo </title>
+  <title> android开发-控件居中和背景颜色 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
             
             
               
-                ios开发－快速生成icon和launchimage
+                android开发-控件居中和背景颜色
               
             
           </h1>
@@ -239,8 +239,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-30T22:03:05+08:00" content="2016-03-30">
-              2016-03-30
+            <time itemprop="dateCreated" datetime="2016-04-01T22:26:03+08:00" content="2016-04-01">
+              2016-04-01
             </time>
           </span>
 
@@ -253,8 +253,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/Android开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发</span>
                   </a>
                 </span>
 
@@ -269,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/30/ios开发－快速生成icon和launchimage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/ios开发－快速生成icon和launchimage/" itemprop="commentsCount"></span>
+                <a href="/2016/04/01/android开发-控件居中和背景颜色/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/android开发-控件居中和背景颜色/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,8 +292,15 @@
       
 
       
-        <p>ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。<br>网上有很多免费的工具可以一键生成icon。  </p>
-<h2 id="1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"><a href="#1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。" class="headerlink" title="1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"></a>1.推荐<a href="http://icon.wuruihong.com" target="_blank" rel="external">图标工厂</a>，可以一键生成所有需要的ios或者android的icon。</h2><h2 id="2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。"><a href="#2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。" class="headerlink" title="2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。"></a>2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。</h2><h2 id="3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。"><a href="#3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。" class="headerlink" title="3.Github上有一个很方便的工具ios-image-util。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。"></a>3.Github上有一个很方便的工具<a href="https://github.com/gootara-org/ios-image-util" target="_blank" rel="external">ios-image-util</a>。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。</h2>
+        <h1 id="1-控件居中"><a href="#1-控件居中" class="headerlink" title="1.控件居中"></a>1.控件居中</h1><p>今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加<br>     android:layout_gravity=”center”  </p>
+<h1 id="2-背景颜色"><a href="#2-背景颜色" class="headerlink" title="2.背景颜色"></a>2.背景颜色</h1><p>如果需要改变控件的背景颜色，可以直接修改background属性，比如：<br>    android:background=”@color/black”<br>可是如果直接设置布局文件的背景可能会发现没有作用。因为在AndroidManifest.xml里面指定了主题。可以在单个activity里设置主题，指定背景为白色：<br>    android:theme=”@android:style/Theme.Light.NoTitleBar.Fullscreen”<br>可以设置为系统自带格式的主题：  </p>
+<a id="more"></a>
+<p>···<br>   @android:style/Theme.Black  //背景黑色-有标题-非全屏<br>   @android:style/Theme.Black.NoTitleBar //背景黑色-无标题-非全屏<br>   @android:style/Theme.Black.NoTitleBar.Fullscreen //背景黑色-无标题-全屏显示<br>   @android:style/Theme.Dialog //对话框显示<br>   @android:style/Theme.InputMethod</p>
+<p>   @android:style/Theme.Light    //背景白色-有标题-非全屏<br>   @android:style/Theme.Light.NoTitleBar //背景白色-无标题-非全屏<br>   @android:style/Theme.Light.NoTitleBar.Fullscreen //背景白色-无标题-全屏显示</p>
+<p>   @android:style/Theme.Light.Panel<br>   @android:style/Theme.Light.WallpaperSettings //背景透明<br>   @android:style/Theme.NoDisplay</p>
+<p>   @android:style/Theme.Translucent.NoTitleBar.Fullscreen //半透明、无标题栏、全屏</p>
+<p>   @android:style/Theme.Wallpaper.NoTitleBar.Fullscreen<br>···<br>也可以自定义主题。  </p>
+
       
     </div>
 
@@ -307,7 +314,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -316,17 +323,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/29/ios开发－滑动条/" rel="next" title="ios开发－滑动条">
-                <i class="fa fa-chevron-left"></i> ios开发－滑动条
+              <a href="/2016/03/31/ios开发——操作表单和警告视图/" rel="next" title="ios开发——操作表单和警告视图">
+                <i class="fa fa-chevron-left"></i> ios开发——操作表单和警告视图
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/31/ios开发——操作表单和警告视图/" rel="prev" title="ios开发——操作表单和警告视图">
-                ios开发——操作表单和警告视图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -352,8 +355,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/30/ios开发－快速生成icon和launchimage/"
-           data-title="ios开发－快速生成icon和launchimage" data-url="http://santu.space/2016/03/30/ios开发－快速生成icon和launchimage/">
+      <div class="ds-thread" data-thread-key="2016/04/01/android开发-控件居中和背景颜色/"
+           data-title="android开发-控件居中和背景颜色" data-url="http://santu.space/2016/04/01/android开发-控件居中和背景颜色/">
       </div>
     
   </div>
@@ -449,7 +452,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"><span class="nav-number">1.</span> <span class="nav-text">1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。"><span class="nav-number">2.</span> <span class="nav-text">2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。"><span class="nav-number">3.</span> <span class="nav-text">3.Github上有一个很方便的工具ios-image-util。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-控件居中"><span class="nav-number">1.</span> <span class="nav-text">1.控件居中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-背景颜色"><span class="nav-number">2.</span> <span class="nav-text">2.背景颜色</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

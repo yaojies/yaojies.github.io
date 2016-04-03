@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
-2.背景颜色如果需要改变控件的背景">
+<meta name="description" content="iOS开发中的委托…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android开发-控件居中和背景颜色">
-<meta property="og:url" content="http://santu.space/2016/04/01/android开发-控件居中和背景颜色/index.html">
+<meta property="og:title" content="iOS开发-委托">
+<meta property="og:url" content="http://santu.space/2016/04/03/iOS开发-委托/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
-2.背景颜色如果需要改变控件的背景">
-<meta property="og:updated_time" content="2016-04-01T14:32:32.000Z">
+<meta property="og:description" content="iOS开发中的委托…">
+<meta property="og:updated_time" content="2016-04-03T15:48:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android开发-控件居中和背景颜色">
-<meta name="twitter:description" content="1.控件居中今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加     android:layout_gravity=”center”  
-2.背景颜色如果需要改变控件的背景">
+<meta name="twitter:title" content="iOS开发-委托">
+<meta name="twitter:description" content="iOS开发中的委托…">
 
 
 
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title> android开发-控件居中和背景颜色 | Santu Memo </title>
+  <title> iOS开发-委托 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +224,7 @@
             
             
               
-                android开发-控件居中和背景颜色
+                iOS开发-委托
               
             
           </h1>
@@ -239,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-01T22:26:03+08:00" content="2016-04-01">
-              2016-04-01
+            <time itemprop="dateCreated" datetime="2016-04-03T23:45:47+08:00" content="2016-04-03">
+              2016-04-03
             </time>
           </span>
 
@@ -253,8 +250,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Android开发</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -269,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/01/android开发-控件居中和背景颜色/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/android开发-控件居中和背景颜色/" itemprop="commentsCount"></span>
+                <a href="/2016/04/03/iOS开发-委托/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/03/iOS开发-委托/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,14 +289,7 @@
       
 
       
-        <h1 id="1-控件居中"><a href="#1-控件居中" class="headerlink" title="1.控件居中"></a>1.控件居中</h1><p>今天在Android工程中加入了一个ImageView控件后一直无法居中，最后发现是要设置父类的Gravity属性为center。需要注意的是，比如父类就是LinarLayout，需要设置的是Layout Parameters下面的Gravity，在xml中可以直接在父类中加<br>     android:layout_gravity=”center”  </p>
-<h1 id="2-背景颜色"><a href="#2-背景颜色" class="headerlink" title="2.背景颜色"></a>2.背景颜色</h1><p>如果需要改变控件的背景颜色，可以直接修改background属性，比如：<br>    android:background=”@color/black”<br>可是如果直接设置布局文件的背景可能会发现没有作用。因为在AndroidManifest.xml里面指定了主题。可以在单个activity里设置主题，指定背景为白色：<br>    android:theme=”@android:style/Theme.Light.NoTitleBar.Fullscreen”<br>可以设置为系统自带格式的主题：  </p>
-<a id="more"></a>
-<p>···<br>   @android:style/Theme.Black  //背景黑色-有标题-非全屏<br>   @android:style/Theme.Black.NoTitleBar //背景黑色-无标题-非全屏<br>   @android:style/Theme.Black.NoTitleBar.Fullscreen //背景黑色-无标题-全屏显示<br>   @android:style/Theme.Dialog //对话框显示<br>   @android:style/Theme.InputMethod</p>
-<p>   @android:style/Theme.Light    //背景白色-有标题-非全屏<br>   @android:style/Theme.Light.NoTitleBar //背景白色-无标题-非全屏<br>   @android:style/Theme.Light.NoTitleBar.Fullscreen //背景白色-无标题-全屏显示</p>
-<p>   @android:style/Theme.Light.Panel<br>   @android:style/Theme.Light.WallpaperSettings //背景透明<br>   @android:style/Theme.NoDisplay</p>
-<p>   @android:style/Theme.Translucent.NoTitleBar.Fullscreen //半透明、无标题栏、全屏</p>
-<p>   @android:style/Theme.Wallpaper.NoTitleBar.Fullscreen<br>···<br>也可以自定义主题。  </p>
+        <p>iOS开发中的委托<br>…<br><a id="more"></a></p>
 
       
     </div>
@@ -314,7 +304,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
       
@@ -323,17 +313,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/31/iOS开发－操作表单和警告视图/" rel="next" title="ios开发——操作表单和警告视图">
-                <i class="fa fa-chevron-left"></i> ios开发——操作表单和警告视图
+              <a href="/2016/04/02/iOS开发－摄像头和照片库/" rel="next" title="iOS开发－摄像头和照片库">
+                <i class="fa fa-chevron-left"></i> iOS开发－摄像头和照片库
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/02/iOS开发－摄像头和照片库/" rel="prev" title="iOS开发－摄像头和照片库">
-                iOS开发－摄像头和照片库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -359,8 +345,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/01/android开发-控件居中和背景颜色/"
-           data-title="android开发-控件居中和背景颜色" data-url="http://santu.space/2016/04/01/android开发-控件居中和背景颜色/">
+      <div class="ds-thread" data-thread-key="2016/04/03/iOS开发-委托/"
+           data-title="iOS开发-委托" data-url="http://santu.space/2016/04/03/iOS开发-委托/">
       </div>
     
   </div>
@@ -456,7 +442,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-控件居中"><span class="nav-number">1.</span> <span class="nav-text">1.控件居中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-背景颜色"><span class="nav-number">2.</span> <span class="nav-text">2.背景颜色</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -294,7 +294,7 @@
 
       
         
-          <h1 id="iOS开发中的委托-delegate"><a href="#iOS开发中的委托-delegate" class="headerlink" title="iOS开发中的委托(delegate)"></a>iOS开发中的委托(delegate)</h1><p>…<br>iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：<br>在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  </p>
+          <h1 id="iOS开发中的委托-delegate"><a href="#iOS开发中的委托-delegate" class="headerlink" title="iOS开发中的委托(delegate)"></a>iOS开发中的委托(delegate)</h1><p>iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：<br>在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@protocol MyDelegate</span><br><span class="line">-(void)buyItem:(NSString *)itemType money:(NSString *)money;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line">@interface My : NSObject</span><br><span class="line">&#123;</span><br><span class="line">    id&lt;MyDelegate&gt; deleage;</span><br><span class="line">&#125;</span><br><span class="line">@property(assign,nonatomic)id&lt;MyDelegate&gt; delegate;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>id<MyDelegate> delegate这个delegate遵循了MyDelegate的协议。  </p>
           <div class="post-more-link text-center">

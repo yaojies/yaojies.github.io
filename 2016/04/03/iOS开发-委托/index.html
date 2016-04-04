@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="iOS开发中的委托…">
+<meta name="description" content="iOS开发中的委托(delegate)…iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  
+12345678910@protocol MyDelegat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发-委托">
 <meta property="og:url" content="http://santu.space/2016/04/03/iOS开发-委托/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="iOS开发中的委托…">
-<meta property="og:updated_time" content="2016-04-03T15:48:48.000Z">
+<meta property="og:description" content="iOS开发中的委托(delegate)…iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  
+12345678910@protocol MyDelegat">
+<meta property="og:updated_time" content="2016-04-04T13:15:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发-委托">
-<meta name="twitter:description" content="iOS开发中的委托…">
+<meta name="twitter:description" content="iOS开发中的委托(delegate)…iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  
+12345678910@protocol MyDelegat">
 
 
 
@@ -289,7 +292,16 @@
       
 
       
-        <p>iOS开发中的委托<br>…<br><a id="more"></a></p>
+        <h1 id="iOS开发中的委托-delegate"><a href="#iOS开发中的委托-delegate" class="headerlink" title="iOS开发中的委托(delegate)"></a>iOS开发中的委托(delegate)</h1><p>…<br>iOS开发中，委托（又称代理）是常用的设计模式之一。通过@protocol方式实现，所以委托又称为协议。在一个类中声明一个协议，而协议的实现是在其他类中实现的。例如：<br>在某一个类中声明一个协议,该协议中有一个方法buyItem，当我要购买book的时候只要通过delegate调用buyItem。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@protocol MyDelegate</span><br><span class="line">-(void)buyItem:(NSString *)itemType money:(NSString *)money;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line">@interface My : NSObject</span><br><span class="line">&#123;</span><br><span class="line">    id&lt;MyDelegate&gt; deleage;</span><br><span class="line">&#125;</span><br><span class="line">@property(assign,nonatomic)id&lt;MyDelegate&gt; delegate;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>id<mydelegate> delegate这个delegate遵循了MyDelegate的协议。  </mydelegate></p>
+<a id="more"></a>
+<p>通过委托实现调用： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-(void)willbuy</span><br><span class="line">&#123;</span><br><span class="line">    [delegate buyItem:@&quot;skillBook&quot; money:@&quot;1000&quot;];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在商店类中实现这一委托  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &quot;Shop.h&quot;</span><br><span class="line">@interface Business : NSObject&lt;MyDelegate&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>然后在 @implementation Business 中调用 buyItem方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Business.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Business</span><br><span class="line"></span><br><span class="line">-(void)buyItem:(NSString *)itemType money:(NSString *)money</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;购买道具!!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -442,7 +454,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS开发中的委托-delegate"><span class="nav-number">1.</span> <span class="nav-text">iOS开发中的委托(delegate)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

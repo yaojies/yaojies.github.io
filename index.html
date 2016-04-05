@@ -294,32 +294,19 @@
 
       
         
-          
-            <p>iOS开发中几种常见的数据持久化方法：  </p>
+          <p>iOS开发中几种常见的数据持久化方法：  </p>
 <ul>
 <li>属性列表  </li>
 <li>对象归档  </li>
 <li>SQLite3  </li>
-<li><p>Core Data</p>
-<p>着四种方法都使用iOS的文件系统。  </p>
-</li>
+<li>Core Data</li>
 </ul>
-<h2 id="1-属性列表"><a href="#1-属性列表" class="headerlink" title="1.属性列表"></a>1.属性列表</h2><p> 涉及到的主要类：NSUserDefaults,一般<code>[NSUserDefaults standardUserDefaults]</code>就够用了。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@interface User : NSObject &lt;NSCoding&gt;  </span><br><span class="line">@property (nonatomic, assign) NSInteger userID;  </span><br><span class="line">@property (nonatomic, copy) NSString *name;  </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>1).分开存取  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 存  </span><br><span class="line">[[NSUserDefaults standardUserDefaults] setInteger:userID forKey:@”userID”];  </span><br><span class="line">[[NSUserDefaults standardUserDefaults] setObject:name forKey:@”name”];  </span><br><span class="line">// 取  </span><br><span class="line">NSInteger uId = [[[NSUserDefaults standardUserDefaults] integerValueForKey:@”userID”];  </span><br><span class="line">NSString* name = [[NSUserDefaults standardUserDefaults] stringForKey:@”name”];</span><br></pre></td></tr></table></figure>
-<p>2).按对象存取  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 存  </span><br><span class="line">[[NSUserDefaults standardUserDefaults] setObject:self forKey:@”user”];  </span><br><span class="line">// 取  </span><br><span class="line">User* sUser = [[NSUserDefaults standardUserDefaults] objectForKey”@”user”];</span><br></pre></td></tr></table></figure>
-<h2 id="2-对象归档"><a href="#2-对象归档" class="headerlink" title="2.对象归档"></a>2.对象归档</h2><p>对象归档需要实现NSCoding协议。NSCoding声明了两个方法都是需要的，一个方法将对象编码到归档中，另一个方法对归档创建新对象，都传递一个NSCoder实例。也可以使用KVC进行编码和解码。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void) encodeWithCoder:(NSCoder *)encoder;  </span><br><span class="line">- (void)initWithCoder:(NSCoder *)encoder;</span><br></pre></td></tr></table></figure>
-<p>建议对象也同时实现NSCopying协议，该协议允许复制对象，可以使数据模型对象具备较大的灵活性。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@interface User : NSObject &lt;NSCoding&gt;</span><br><span class="line">@property (nonatomic, assign) NSInteger userID;</span><br><span class="line">@property (nonatomic, copy) NSString *name;</span><br><span class="line">@end</span><br><span class="line">@implementation User</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 以下两个方法一定要实现，不然在调用的时候会crash</span><br><span class="line">- (void)encodeWithCoder:(NSCoder *)encoder; </span><br><span class="line">&#123;</span><br><span class="line">	// 这里放置需要持久化的属性</span><br><span class="line">	[encode encodeObject:[NSNumber numberWithInteger:self.userID] forKey:@”userID”];</span><br><span class="line">	[encode encodeObject:self.name forKey:@&quot;name&quot;];</span><br><span class="line">&#125;</span><br><span class="line">- (id)initWithCoder:(NSCoder *)decoder</span><br><span class="line">&#123;</span><br><span class="line">	if (self = [self init])</span><br><span class="line">	&#123;</span><br><span class="line">		//  这里务必和encodeWithCoder方法里面的内容一致，不然会读不到数据</span><br><span class="line">		self.userID = [[decoder decodeObjectForKey:@&quot;userID&quot;] integerValue];</span><br><span class="line">		self.name = [decoder decodeObjectForKey:@&quot;name&quot;];</span><br><span class="line">	&#125;</span><br><span class="line">	return self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 使用方法</span><br><span class="line">+ (BOOL)save </span><br><span class="line">&#123;</span><br><span class="line">	NSError *error = nil;</span><br><span class="line">	// 确定存储路径，一般是Document目录下的文件</span><br><span class="line">	NSString* fileName = [self getFileName];</span><br><span class="line">	NSString* filePath = [self getFilePath];</span><br><span class="line">	if (![[NSFileManager defaultManager] createDirectoryAtPath:filePath 		withIntermediateDirectories:YES attributes:nil error:&amp;error]) </span><br><span class="line">	&#123;</span><br><span class="line">		NSLog(@”创建用户文件目录失败”);</span><br><span class="line">		return NO;</span><br><span class="line">	&#125;</span><br><span class="line">	return [NSKeyedArchiver archiveRootObject:self toFile:[fileName:userId]];</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<h2 id="3-SQLite3"><a href="#3-SQLite3" class="headerlink" title="3.SQLite3"></a>3.SQLite3</h2><p>SQLite3是iOS的嵌入式SQL数据库，使用结构化查询语言。关于SQLite的开发资料较多，建议不直接操作SQLite库，而是采用一些开源的第三方库来进行操作。比如：<a href="https://github.com/ccgus/fmdb.git" target="_blank" rel="external">FMDB</a>对SQLite都做了不错的封装。  </p>
-<h2 id="4-Core-Data"><a href="#4-Core-Data" class="headerlink" title="4.Core Data"></a>4.Core Data</h2><p>Core Data本质上是使用SQLite保存数据，但是它不需要编写任何SQL语句。要使用Core Data，需要在Xcode中的数据模型编辑器中设计好各个实体以及定义好他们的属性和关系。之后，通过操作这些对象，结合Core Data完成数据的持久化。  </p>
-
-          
+<p>这四种方法都使用iOS的文件系统。  </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/05/iOS开发－数据持久化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

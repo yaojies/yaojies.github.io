@@ -63,11 +63,8 @@
 对象归档  
 SQLite3  
 Core Data
-着四种方法都使用iOS的文件系统。  
 
-
-1.属性列表 涉及到的主要类：NSUserDefaults,一般[NSUserDefaults standardUserDefaults]就够用了。  
-1234@interface User : NSObject &amp;lt;NSCoding&amp;">
+这四种方法都使用iOS的文件系统。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS-数据持久化">
 <meta property="og:url" content="http://santu.space/2016/04/05/iOS开发－数据持久化/index.html">
@@ -78,12 +75,9 @@ Core Data
 对象归档  
 SQLite3  
 Core Data
-着四种方法都使用iOS的文件系统。  
 
-
-1.属性列表 涉及到的主要类：NSUserDefaults,一般[NSUserDefaults standardUserDefaults]就够用了。  
-1234@interface User : NSObject &amp;lt;NSCoding&amp;">
-<meta property="og:updated_time" content="2016-04-05T15:56:05.000Z">
+这四种方法都使用iOS的文件系统。">
+<meta property="og:updated_time" content="2016-04-05T16:04:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS-数据持久化">
 <meta name="twitter:description" content="iOS开发中几种常见的数据持久化方法：  
@@ -92,11 +86,8 @@ Core Data
 对象归档  
 SQLite3  
 Core Data
-着四种方法都使用iOS的文件系统。  
 
-
-1.属性列表 涉及到的主要类：NSUserDefaults,一般[NSUserDefaults standardUserDefaults]就够用了。  
-1234@interface User : NSObject &amp;lt;NSCoding&amp;">
+这四种方法都使用iOS的文件系统。">
 
 
 
@@ -324,10 +315,10 @@ Core Data
 <li>属性列表  </li>
 <li>对象归档  </li>
 <li>SQLite3  </li>
-<li><p>Core Data</p>
-<p>着四种方法都使用iOS的文件系统。  </p>
-</li>
+<li>Core Data</li>
 </ul>
+<p>这四种方法都使用iOS的文件系统。  </p>
+<a id="more"></a>
 <h2 id="1-属性列表"><a href="#1-属性列表" class="headerlink" title="1.属性列表"></a>1.属性列表</h2><p> 涉及到的主要类：NSUserDefaults,一般<code>[NSUserDefaults standardUserDefaults]</code>就够用了。  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@interface User : NSObject &lt;NSCoding&gt;  </span><br><span class="line">@property (nonatomic, assign) NSInteger userID;  </span><br><span class="line">@property (nonatomic, copy) NSString *name;  </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>1).分开存取  </p>
@@ -342,6 +333,10 @@ Core Data
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 使用方法</span><br><span class="line">+ (BOOL)save </span><br><span class="line">&#123;</span><br><span class="line">	NSError *error = nil;</span><br><span class="line">	// 确定存储路径，一般是Document目录下的文件</span><br><span class="line">	NSString* fileName = [self getFileName];</span><br><span class="line">	NSString* filePath = [self getFilePath];</span><br><span class="line">	if (![[NSFileManager defaultManager] createDirectoryAtPath:filePath 		withIntermediateDirectories:YES attributes:nil error:&amp;error]) </span><br><span class="line">	&#123;</span><br><span class="line">		NSLog(@”创建用户文件目录失败”);</span><br><span class="line">		return NO;</span><br><span class="line">	&#125;</span><br><span class="line">	return [NSKeyedArchiver archiveRootObject:self toFile:[fileName:userId]];</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <h2 id="3-SQLite3"><a href="#3-SQLite3" class="headerlink" title="3.SQLite3"></a>3.SQLite3</h2><p>SQLite3是iOS的嵌入式SQL数据库，使用结构化查询语言。关于SQLite的开发资料较多，建议不直接操作SQLite库，而是采用一些开源的第三方库来进行操作。比如：<a href="https://github.com/ccgus/fmdb.git" target="_blank" rel="external">FMDB</a>对SQLite都做了不错的封装。  </p>
 <h2 id="4-Core-Data"><a href="#4-Core-Data" class="headerlink" title="4.Core Data"></a>4.Core Data</h2><p>Core Data本质上是使用SQLite保存数据，但是它不需要编写任何SQL语句。要使用Core Data，需要在Xcode中的数据模型编辑器中设计好各个实体以及定义好他们的属性和关系。之后，通过操作这些对象，结合Core Data完成数据的持久化。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">NSManagedObjectContext *context = [appDelegate managedObjectContext];</span><br><span class="line">NSError *error;</span><br><span class="line">NSString *fieldName = [NSString stringWithFormat:@&quot;test%d&quot;, i];</span><br><span class="line">UITextField *theField = [self valueForKey:fieldName];</span><br><span class="line">NSFetchRequest *request = [[NSFetchRequest alloc] init];</span><br><span class="line">//创建描述语句，需求Line对象。类似于在数据库中限定为Line表。</span><br><span class="line">NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@&quot;Line&quot;  inManagedObjectContext:context];</span><br><span class="line">[request setEntity:entityDescription];</span><br><span class="line">//创建限制性语句，类似于SQL语句中的 where lineNum = i</span><br><span class="line">NSPredicate *pred = [NSPredicate predicateWithFormat:@&quot;(lineNum = %d)&quot;, i];</span><br><span class="line">[request setPredicate:pred];</span><br><span class="line">NSManagedObject *theLine = nil;</span><br><span class="line">NSArray *objects = [context executeFetchRequest:request error:&amp;error];</span><br><span class="line">if (objects == nil)&#123;</span><br><span class="line">	NSLog(@”There was an error!”);</span><br><span class="line">	// Do whatever error handling is appropriate</span><br><span class="line">&#125;</span><br><span class="line">if ([objects count] &gt; 0)&#123;    //如果符合条件的object存在，则取出</span><br><span class="line">	theLine = [objects objectAtIndex:0];</span><br><span class="line">&#125;else &#123;  //如果不存在，则插入一个新的.</span><br><span class="line">	theLine = [NSEntityDescription insertNewObjectForEntityForName:@&quot;Line&quot;</span><br><span class="line">	inManagedObjectContext:context];</span><br><span class="line">	[theLine setValue:[NSNumber numberWithInt:i] forKey:@”lineNum”];  //设置这个object的属性，coredata会自动将其写入sqlite</span><br><span class="line">	[theLine setValue:theField.text forKey:@&quot;lineText&quot;];</span><br><span class="line">	[request release];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是其取数据的过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Core_Data_PersistenceAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];</span><br><span class="line">NSManagedObjectContext *context = [appDelegate managedObjectContext];</span><br><span class="line">NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@&quot;Line&quot;</span><br><span class="line">inManagedObjectContext:context];</span><br><span class="line">NSFetchRequest *request = [[NSFetchRequest alloc] init];</span><br><span class="line">[request setEntity:entityDescription];</span><br><span class="line">NSError *error;</span><br><span class="line">NSArray *objects = [context executeFetchRequest:request error:&amp;error];</span><br><span class="line">if (objects == nil)&#123;</span><br><span class="line">	NSLog(@”There was an error!”);</span><br><span class="line">	// Do whatever error handling is appropriate</span><br><span class="line">&#125;</span><br><span class="line">//每一个对象在CoreData中都表示为一个NSManagedObject对象(类似于数据库表中的每一行),他的属性通过键/值 方式获取</span><br><span class="line">for (NSManagedObject *oneObject in objects)&#123;</span><br><span class="line">	NSNumber *lineNum = [oneObject valueForKey:@&quot;lineNum&quot;];</span><br><span class="line">	NSString *lineText = [oneObject valueForKey:@&quot;lineText&quot;];</span><br><span class="line">&#125;</span><br><span class="line">[request release];</span><br></pre></td></tr></table></figure>
+<p>原帖地址：<a href="http://www.cocoachina.com/bbs/read.php?tid=137443" target="_blank" rel="external">http://www.cocoachina.com/bbs/read.php?tid=137443</a></p>
 
       
     </div>

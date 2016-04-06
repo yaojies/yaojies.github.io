@@ -57,19 +57,25 @@
 
 
 
-<meta name="description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];   UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
-webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕   webView.detectsPh">
+<meta name="description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];  
+UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
+webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕  
+webView.detectsPh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS－UIWebView">
 <meta property="og:url" content="http://santu.space/2016/04/06/iOS－UIWebView/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];   UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
-webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕   webView.detectsPh">
-<meta property="og:updated_time" content="2016-04-06T15:57:29.000Z">
+<meta property="og:description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];  
+UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
+webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕  
+webView.detectsPh">
+<meta property="og:updated_time" content="2016-04-06T16:01:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS－UIWebView">
-<meta name="twitter:description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];   UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
-webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕   webView.detectsPh">
+<meta name="twitter:description" content="1.创建UIWebViewCGRect bouds = [[UIScreen manScreen]applicationFrame];  
+UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
+webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕  
+webView.detectsPh">
 
 
 
@@ -292,17 +298,26 @@ webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕   w
       
 
       
-        <h1 id="1-创建UIWebView"><a href="#1-创建UIWebView" class="headerlink" title="1.创建UIWebView"></a>1.创建UIWebView</h1><pre><code>CGRect bouds = [[UIScreen manScreen]applicationFrame];   UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
-webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕   webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单击可以拨打  
+        <h1 id="1-创建UIWebView"><a href="#1-创建UIWebView" class="headerlink" title="1.创建UIWebView"></a>1.创建UIWebView</h1><pre><code>CGRect bouds = [[UIScreen manScreen]applicationFrame];  
+UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
+webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕  
+webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单击可以拨打  
 [self.view addSubview:webView];//添加的UIWebView
 </code></pre><a id="more"></a>
-<h1 id="2-加载内容"><a href="#2-加载内容" class="headerlink" title="2.加载内容"></a>2.加载内容</h1><pre><code>NSURL* url = [NSURL URLWithString:@&quot;http://www.baidu.com&quot;];//创建URL   NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest  [webView loadRequest:request];//加载  
+<h1 id="2-加载内容"><a href="#2-加载内容" class="headerlink" title="2.加载内容"></a>2.加载内容</h1><pre><code>NSURL* url = [NSURL URLWithString:@&quot;http://www.baidu.com&quot;];//创建URL  
+NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest  
+[webView loadRequest:request];//加载  
 //可加载本地资源:  
-NSURL* url = [NSURL fileURLWithPath:filePath];//创建URL   NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest   [webView loadRequest:request];//加载
-//还支持将一个NSString对象作为源来加载。可以为其提供一个基础URL，来指导UIWebView对象如何跟随链接和加载远程资源： 
+NSURL* url = [NSURL fileURLWithPath:filePath];//创建URL  
+NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest  
+[webView loadRequest:request];//加载  
+//还支持将一个NSString对象作为源来加载。可以为其提供一个基础URL，来指导UIWebView对象如何跟随链接和加载远程资源:  
 [webView loadHTMLString:myHTML baseURL:[NSURL URLWithString:@&quot;http://baidu.com&quot;]];
 </code></pre><h1 id="3-导航"><a href="#3-导航" class="headerlink" title="3.导航"></a>3.导航</h1><p>UIWebView类内部会管理浏览器的导航动作，通过goForward和goBack方法你可以控制前进与后退动作：  </p>
-<pre><code>[webView goBack];   [webView goForward];   [webView reload];//重载   [webView stopLoading];//取消载入内容
+<pre><code>[webView goBack];  
+[webView goForward];  
+[webView reload];//重载  
+[webView stopLoading];//取消载入内容
 </code></pre><p><a href="http://www.jianshu.com/p/3d7e4804033b" target="_blank" rel="external">原文链接</a></p>
 
       

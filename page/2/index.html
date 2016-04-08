@@ -226,6 +226,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/27/vps_vpn/" itemprop="url">
+                  vps搭建vpn
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-27T23:25:10+08:00" content="2016-03-27">
+              2016-03-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/vps/" itemprop="url" rel="index">
+                    <span itemprop="name">vps</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/27/vps_vpn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/27/vps_vpn/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一个便宜的vps搭建一个vpn完全够用。我入手的第一台vps是<a href="p&gt;https://bandwagonhost.com/&lt;/p">https://bandwagonhost.com/</a>  (搬瓦工)</p>
+<p>搬瓦工的KiwiVm控制面板自带OpenVpn和Shadowsock配置，可以直接在<a href="https://kiwivm.64clouds.com/main.php">https://kiwivm.64clouds.com/main.php</a>进行配置。这里不展开。<br>用终端安装pptp和l2tp：<br>系统采用的是CentOS6-x86。  </p>
+<h1 id="搭建pptp："><a href="#搭建pptp：" class="headerlink" title="搭建pptp："></a>搭建pptp：</h1><h2 id="1-下载安装脚本"><a href="#1-下载安装脚本" class="headerlink" title="1.下载安装脚本"></a>1.下载安装脚本</h2><p>#wget <a href="http://www.hi-vps.com/shell/vpn_centos6.sh">http://www.hi-vps.com/shell/vpn_centos6.sh</a><br>#chmod a+x vpn_centos6.sh</p>
+<h2 id="2-一键执行安装"><a href="#2-一键执行安装" class="headerlink" title="2.一键执行安装"></a>2.一键执行安装</h2><p>#bash vpn_centos6.sh<br>选择第一个安装VPN服务。安装完毕后会默认生成一个用户名vpn，和一个随机密码。<br>安装结束后再次运行脚本，选择3添加用户名和密码。<br>如果vpn发生错误，可以运行该脚本选择2修复vpn，然后重启vps（可能不需要重启）。  </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/27/vps_vpn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/26/Objective-C @property/" itemprop="url">
                   Objective-C 属性(@property和@synthesize)
                 </a>
@@ -825,7 +945,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

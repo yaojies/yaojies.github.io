@@ -71,7 +71,7 @@ alloc            创建对象，分配空间
 init(initWithNibName)    初始化对象，初始化数据  
 loadView            从nib载入视图 ，通常这一步不需要去干涉。除非你没有使用xib文件创建视图  
 viewDidLoad        载入完成，可以进行自定义数据以及动">
-<meta property="og:updated_time" content="2016-04-08T15:46:49.000Z">
+<meta property="og:updated_time" content="2016-04-08T15:48:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发－UIViewController生命周期">
 <meta name="twitter:description" content="1.当一个视图控制器被创建，并在屏幕上显示的时候。代码的执行顺序如下
@@ -314,6 +314,7 @@ viewDidLoad        载入完成，可以进行自定义数据以及动">
 <li>viewDidDisappear            视图已经被从屏幕上移除，用户看不到这个视图了  </li>
 <li>dealloc                    视图被销毁，此处需要对你在init和viewDidLoad中创建的对象进行释放  </li>
 </ol>
+<a id="more"></a>
 <h2 id="3-UIViewController在创建显示时的方法调用顺序"><a href="#3-UIViewController在创建显示时的方法调用顺序" class="headerlink" title="3.UIViewController在创建显示时的方法调用顺序"></a>3.UIViewController在创建显示时的方法调用顺序</h2><ol>
 <li><p>- (void)viewDidLoad；</p>
 <p>   一个APP在载入时会先通过调用loadView方法或者载入IB中创建的初始界面的方法，将视图载入到内存中。然后会调用viewDidLoad方法来进行进一步的设置。通常，我们对于各种初始数据的载入，初始设定等很多内容，都会在这个方法中实现，所以这个方法是一个很常用，很重要的方法。<br>   要注意，这个方法只会在APP刚开始加载的时候调用一次，以后都不会再调用它了，所以只能用来做初始设置。  </p>

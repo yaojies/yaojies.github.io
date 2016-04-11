@@ -226,6 +226,127 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/11/iOS开发-视图方向/" itemprop="url">
+                  iOS开发-视图方向
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-11T22:37:15+08:00" content="2016-04-11">
+              2016-04-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/11/iOS开发-视图方向/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/iOS开发-视图方向/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在iOS中视图方向的控制可以选择一个应用级的设置，也可以为每个独立视图控制器调整。  </p>
+<h1 id="1-应用级支持的方向"><a href="#1-应用级支持的方向" class="headerlink" title="1.应用级支持的方向"></a>1.应用级支持的方向</h1><p>在Xcode中，依次选择target-&gt;General, 在Deployment Info的Device Orientation中可以制定应用程序支持的方向。在上面的Devices可以选择iPhone或iPad，选择某一项后就不能在另一项设备上运行了。<br>这种方法其实是修改了应用的Info.plist文件的<code>Supported interface orientations</code>和<code>Supported interface orientations (iPad)</code>属性。使用Device Orientation复选框的效果就是添加或删除对应的子选项。  </p>
+<h1 id="2-独立控制器的旋转支持"><a href="#2-独立控制器的旋转支持" class="headerlink" title="2.独立控制器的旋转支持"></a>2.独立控制器的旋转支持</h1><p>对独立视图进行配置旋转方向需要注意只能在应用级支持的方向中选择。<br>在ViewController中实现父类UIViewController中的一个方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (NSUInteger)supportedInterfaceOrientations &#123;</span><br><span class="line">    return (UIInterfaceOrientationMaskPortrait |</span><br><span class="line">            UIInterfaceOrientationMaskLandscapeLeft);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，ViewController就只支持UIInterfaceOrientationMaskPortrait和UIInterfaceOrientationMaskLandscapeLeft方向了。<br>这里可以返回的方向可以有以下几种：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UIInterfaceOrientationMaskPortrait</span><br><span class="line">UIInterfaceOrientationMaskLandscapeLeft</span><br><span class="line">UIInterfaceOrientationMaskLandscapeRight</span><br><span class="line">UIInterfaceOrientationMaskPortraitUpsideDown</span><br><span class="line">UIInterfaceOrientationMaskLandscape</span><br><span class="line">UIInterfaceOrientationMaskAll</span><br><span class="line">UIInterfaceOrientationMaskAllButUpsideDown</span><br></pre></td></tr></table></figure>
+<p>根据字面意思很容易明白每个含义。  </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/10/Cocos2dx-帧动画/" itemprop="url">
                   Cocos2dx-帧动画
                 </a>
@@ -1289,121 +1410,6 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/iOS开发－快速生成icon和launchimage/" itemprop="url">
-                  ios开发－快速生成icon和launchimage
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-30T22:03:05+08:00" content="2016-03-30">
-              2016-03-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/30/iOS开发－快速生成icon和launchimage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/iOS开发－快速生成icon和launchimage/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ios开发过程中icon和lauchimage往往要考虑多种尺寸，美术人员往往不熟悉需要的尺寸和文件的命名。其实这些工作都可以交给一些工具处理。<br>网上有很多免费的工具可以一键生成icon。  </p>
-<h2 id="1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"><a href="#1-推荐图标工厂，可以一键生成所有需要的ios或者android的icon。" class="headerlink" title="1.推荐图标工厂，可以一键生成所有需要的ios或者android的icon。"></a>1.推荐<a href="http://icon.wuruihong.com" target="_blank" rel="external">图标工厂</a>，可以一键生成所有需要的ios或者android的icon。</h2><h2 id="2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。"><a href="#2-appstore有一款应用Appicon-and-Launchimage-Maker可以生成icon和launch-image，免费版有使用次数限制，可以选择付费版。" class="headerlink" title="2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。"></a>2.appstore有一款应用Appicon and Launchimage Maker可以生成icon和launch image，免费版有使用次数限制，可以选择付费版。</h2><h2 id="3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。"><a href="#3-Github上有一个很方便的工具ios-image-util。使用mac的Jar-Launcher打开ios-image-util-jar就可以使用了，操作简单易上手。" class="headerlink" title="3.Github上有一个很方便的工具ios-image-util。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。"></a>3.Github上有一个很方便的工具<a href="https://github.com/gootara-org/ios-image-util" target="_blank" rel="external">ios-image-util</a>。使用mac的Jar Launcher打开ios-image-util.jar就可以使用了，操作简单易上手。</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1449,7 +1455,7 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Cocos2dx," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="cocos2d-x的新版本里加入了以前quick-cocos2dx的mvc框架，创建新项目时就会自动生成相关代码。  
-12345678910111213141516171819202122-- MainScene.lua  local MainScene = class(&amp;quot;MainScene&amp;quot;, cc.load(&amp;quot;mvc&amp;quot;).ViewBase)MainSc">
+<meta name="description" content="在iOS中视图方向的控制可以选择一个应用级的设置，也可以为每个独立视图控制器调整。  
+1.应用级支持的方向在Xcode中，依次选择target-&amp;gt;General, 在Deployment Info的Device Orientation中可以制定应用程序支持的方向。在上面的Devices可以选择iPhone或iPad，选择某一项后就不能在另一项设备上运行了。这种方法其实是修改了应用的Info">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cocos2dx-mvc控件绑定">
-<meta property="og:url" content="http://santu.space/2016/04/09/Cocos2dx-mvc控件绑定/index.html">
+<meta property="og:title" content="iOS开发-视图方向">
+<meta property="og:url" content="http://santu.space/2016/04/11/iOS开发-视图方向/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="cocos2d-x的新版本里加入了以前quick-cocos2dx的mvc框架，创建新项目时就会自动生成相关代码。  
-12345678910111213141516171819202122-- MainScene.lua  local MainScene = class(&amp;quot;MainScene&amp;quot;, cc.load(&amp;quot;mvc&amp;quot;).ViewBase)MainSc">
-<meta property="og:updated_time" content="2016-04-09T17:30:30.000Z">
+<meta property="og:description" content="在iOS中视图方向的控制可以选择一个应用级的设置，也可以为每个独立视图控制器调整。  
+1.应用级支持的方向在Xcode中，依次选择target-&amp;gt;General, 在Deployment Info的Device Orientation中可以制定应用程序支持的方向。在上面的Devices可以选择iPhone或iPad，选择某一项后就不能在另一项设备上运行了。这种方法其实是修改了应用的Info">
+<meta property="og:updated_time" content="2016-04-11T15:34:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cocos2dx-mvc控件绑定">
-<meta name="twitter:description" content="cocos2d-x的新版本里加入了以前quick-cocos2dx的mvc框架，创建新项目时就会自动生成相关代码。  
-12345678910111213141516171819202122-- MainScene.lua  local MainScene = class(&amp;quot;MainScene&amp;quot;, cc.load(&amp;quot;mvc&amp;quot;).ViewBase)MainSc">
+<meta name="twitter:title" content="iOS开发-视图方向">
+<meta name="twitter:description" content="在iOS中视图方向的控制可以选择一个应用级的设置，也可以为每个独立视图控制器调整。  
+1.应用级支持的方向在Xcode中，依次选择target-&amp;gt;General, 在Deployment Info的Device Orientation中可以制定应用程序支持的方向。在上面的Devices可以选择iPhone或iPad，选择某一项后就不能在另一项设备上运行了。这种方法其实是修改了应用的Info">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> Cocos2dx-mvc控件绑定 | Santu Memo </title>
+  <title> iOS开发-视图方向 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
             
             
               
-                Cocos2dx-mvc控件绑定
+                iOS开发-视图方向
               
             
           </h1>
@@ -239,8 +239,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T20:29:58+08:00" content="2016-04-09">
-              2016-04-09
+            <time itemprop="dateCreated" datetime="2016-04-11T22:37:15+08:00" content="2016-04-11">
+              2016-04-11
             </time>
           </span>
 
@@ -253,8 +253,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Cocos2dx/" itemprop="url" rel="index">
-                    <span itemprop="name">Cocos2dx</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -269,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/09/Cocos2dx-mvc控件绑定/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/Cocos2dx-mvc控件绑定/" itemprop="commentsCount"></span>
+                <a href="/2016/04/11/iOS开发-视图方向/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/iOS开发-视图方向/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,19 +292,13 @@
       
 
       
-        <p>cocos2d-x的新版本里加入了以前quick-cocos2dx的mvc框架，创建新项目时就会自动生成相关代码。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">-- MainScene.lua  </span><br><span class="line">local MainScene = class(&quot;MainScene&quot;, cc.load(&quot;mvc&quot;).ViewBase)</span><br><span class="line"></span><br><span class="line">MainScene.RESOURCE_FILENAME = &quot;MainScene.csb&quot;</span><br><span class="line"></span><br><span class="line">function MainScene:onCreate()</span><br><span class="line">    printf(&quot;resource node = %s&quot;, tostring(self:getResourceNode()))</span><br><span class="line">    </span><br><span class="line">    --[[ you can create scene with following comment code instead of using csb file.</span><br><span class="line">    -- add background image</span><br><span class="line">    display.newSprite(&quot;HelloWorld.png&quot;)</span><br><span class="line">        :move(display.center)</span><br><span class="line">        :addTo(self)</span><br><span class="line"></span><br><span class="line">    -- add HelloWorld label</span><br><span class="line">    cc.Label:createWithSystemFont(&quot;Hello World&quot;, &quot;Arial&quot;, 40)</span><br><span class="line">        :move(display.cx, display.cy + 200)</span><br><span class="line">        :addTo(self)</span><br><span class="line">    ]]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">return MainScene</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>采用mvc框架的方法加载.csb布局文件后发现一个问题，如何获取UI控件。其实在mvc框架中给出了一种控件绑定的方法：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-- ViewBase.lua  </span><br><span class="line"></span><br><span class="line">function ViewBase:createResoueceBinding(binding)</span><br><span class="line">    assert(self.resourceNode_, &quot;ViewBase:createResoueceBinding() - not load resource node&quot;)</span><br><span class="line">    for nodeName, nodeBinding in pairs(binding) do</span><br><span class="line">        local node = self.resourceNode_:getChildByName(nodeName)</span><br><span class="line">        if nodeBinding.varname then</span><br><span class="line">            self[nodeBinding.varname] = node</span><br><span class="line">        end</span><br><span class="line">        for _, event in ipairs(nodeBinding.events or &#123;&#125;) do</span><br><span class="line">            if event.event == &quot;touch&quot; then</span><br><span class="line">                node:onTouch(handler(self, self[event.method]))</span><br><span class="line">            end</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h2 id="只要在MainScene-lua中加入绑定的代码就行了。"><a href="#只要在MainScene-lua中加入绑定的代码就行了。" class="headerlink" title="只要在MainScene.lua中加入绑定的代码就行了。"></a>只要在MainScene.lua中加入绑定的代码就行了。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">local MainSceneEvents=&#123;</span><br><span class="line">	[&quot;btn_start&quot;]=&#123;[&quot;varname&quot;]=&quot;btn_start&quot;,</span><br><span class="line">					[&quot;events&quot;]=&#123;&#123;[&quot;event&quot;]=&quot;touch&quot;,[&quot;method&quot;]=&quot;OnBtnClick&quot;&#125;&#125; </span><br><span class="line">					&#125;</span><br><span class="line">&#125;</span><br><span class="line">MainScene.RESOURCE_BINDING=MainSceneEvents</span><br><span class="line">function MainScene:OnBtnClick(event)</span><br><span class="line">   if event.name == &quot;began&quot; then </span><br><span class="line">    print(&quot;event.began&quot;)</span><br><span class="line">   elseif event.name == &quot;ended&quot; then</span><br><span class="line">     print(&quot;event.ended&quot;)</span><br><span class="line">   end</span><br><span class="line">    print(event.name)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>其中第一个btn_start是cocos studio控件名，第二个btn_start是引用变量名。  </p>
-<h2 id="也可以简单绑定控件名："><a href="#也可以简单绑定控件名：" class="headerlink" title="也可以简单绑定控件名："></a>也可以简单绑定控件名：</h2><pre><code>[&quot;cocos控件名&quot;] = {[&quot;varname&quot;] = 引用变量名 }
-</code></pre><p>然后可以用self.btn_start 调用控件方法：  </p>
-<pre><code>self.btn:addClickEventListener(function(sender)
-    print(&quot;info&quot;,&quot;****&quot;)
-end)
-</code></pre><h2 id="运行后点击按钮，控制台就会打印日志："><a href="#运行后点击按钮，控制台就会打印日志：" class="headerlink" title="运行后点击按钮，控制台就会打印日志："></a>运行后点击按钮，控制台就会打印日志：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[LUA-print] event.began</span><br><span class="line">[LUA-print] began</span><br><span class="line">[LUA-print] event.ended</span><br><span class="line">[LUA-print] ended</span><br></pre></td></tr></table></figure>
+        <p>在iOS中视图方向的控制可以选择一个应用级的设置，也可以为每个独立视图控制器调整。  </p>
+<h1 id="1-应用级支持的方向"><a href="#1-应用级支持的方向" class="headerlink" title="1.应用级支持的方向"></a>1.应用级支持的方向</h1><p>在Xcode中，依次选择target-&gt;General, 在Deployment Info的Device Orientation中可以制定应用程序支持的方向。在上面的Devices可以选择iPhone或iPad，选择某一项后就不能在另一项设备上运行了。<br>这种方法其实是修改了应用的Info.plist文件的<code>Supported interface orientations</code>和<code>Supported interface orientations (iPad)</code>属性。使用Device Orientation复选框的效果就是添加或删除对应的子选项。  </p>
+<h1 id="2-独立控制器的旋转支持"><a href="#2-独立控制器的旋转支持" class="headerlink" title="2.独立控制器的旋转支持"></a>2.独立控制器的旋转支持</h1><p>对独立视图进行配置旋转方向需要注意只能在应用级支持的方向中选择。<br>在ViewController中实现父类UIViewController中的一个方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (NSUInteger)supportedInterfaceOrientations &#123;</span><br><span class="line">    return (UIInterfaceOrientationMaskPortrait |</span><br><span class="line">            UIInterfaceOrientationMaskLandscapeLeft);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，ViewController就只支持UIInterfaceOrientationMaskPortrait和UIInterfaceOrientationMaskLandscapeLeft方向了。<br>这里可以返回的方向可以有以下几种：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UIInterfaceOrientationMaskPortrait</span><br><span class="line">UIInterfaceOrientationMaskLandscapeLeft</span><br><span class="line">UIInterfaceOrientationMaskLandscapeRight</span><br><span class="line">UIInterfaceOrientationMaskPortraitUpsideDown</span><br><span class="line">UIInterfaceOrientationMaskLandscape</span><br><span class="line">UIInterfaceOrientationMaskAll</span><br><span class="line">UIInterfaceOrientationMaskAllButUpsideDown</span><br></pre></td></tr></table></figure>
+<p>根据字面意思很容易明白每个含义。  </p>
 
       
     </div>
@@ -319,7 +313,7 @@ end)
       
         <div class="post-tags">
           
-            <a href="/tags/Cocos2dx/" rel="tag">#Cocos2dx</a>
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
       
@@ -328,17 +322,13 @@ end)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/07/iOS开发－UIViewController生命周期/" rel="next" title="iOS开发－UIViewController生命周期">
-                <i class="fa fa-chevron-left"></i> iOS开发－UIViewController生命周期
+              <a href="/2016/04/10/Cocos2dx-帧动画/" rel="next" title="Cocos2dx-帧动画">
+                <i class="fa fa-chevron-left"></i> Cocos2dx-帧动画
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/10/Cocos2dx-帧动画/" rel="prev" title="Cocos2dx-帧动画">
-                Cocos2dx-帧动画 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -364,8 +354,8 @@ end)
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/09/Cocos2dx-mvc控件绑定/"
-           data-title="Cocos2dx-mvc控件绑定" data-url="http://santu.space/2016/04/09/Cocos2dx-mvc控件绑定/">
+      <div class="ds-thread" data-thread-key="2016/04/11/iOS开发-视图方向/"
+           data-title="iOS开发-视图方向" data-url="http://santu.space/2016/04/11/iOS开发-视图方向/">
       </div>
     
   </div>
@@ -461,7 +451,7 @@ end)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#只要在MainScene-lua中加入绑定的代码就行了。"><span class="nav-number">1.</span> <span class="nav-text">只要在MainScene.lua中加入绑定的代码就行了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#也可以简单绑定控件名："><span class="nav-number">2.</span> <span class="nav-text">也可以简单绑定控件名：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行后点击按钮，控制台就会打印日志："><span class="nav-number">3.</span> <span class="nav-text">运行后点击按钮，控制台就会打印日志：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-应用级支持的方向"><span class="nav-number">1.</span> <span class="nav-text">1.应用级支持的方向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-独立控制器的旋转支持"><span class="nav-number">2.</span> <span class="nav-text">2.独立控制器的旋转支持</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

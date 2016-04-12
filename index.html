@@ -294,12 +294,11 @@
 
       
         
-          <p>Cocos2dx-物理引擎  </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/12/Cocos2dx-物理引擎/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <p>Cocos2dx-物理引擎    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">local  scene  =  cc.Scene:createWithPhysics()</span><br><span class="line">-- 设置重力</span><br><span class="line">scene:getPhysicsWorld():setGravity(cc.vertex2F(0,-1000))</span><br><span class="line">-- 声明层</span><br><span class="line">local  layer  =  cc.LayerColor:create(cc.c4f(255,255,255,255))</span><br><span class="line">-- 声明一个函数,作用是点一下屏幕在当前位置丢下一个球</span><br><span class="line">local function onTouch(touch,event)</span><br><span class="line">    local location = touch:getLocation()</span><br><span class="line">   	local x,y = location.x,location.y</span><br><span class="line">    local ball = cc.Sprite:create(&quot;ball.png&quot;)</span><br><span class="line">   	local size = ball:getContentSize()</span><br><span class="line">    ball:setPosition(x,y)</span><br><span class="line">   	ball:setPhysicsBody(cc.PhysicsBody:createCircle(size.width/2))</span><br><span class="line">   	ball:getPhysicsBody():setVelocity(cc.vertex2F(0,300))</span><br><span class="line">   	layer:addChild(ball)</span><br><span class="line">end</span><br><span class="line">-- 声明一个触摸监听器,并和层绑定</span><br><span class="line">local listener = cc.EventListenerTouchOneByOne:create()</span><br><span class="line">	listener:registerScriptHandler(onTouch,cc.Handler.EVENT_TOUCH_BEGAN)</span><br><span class="line">	 layer:getEventDispatcher():addEventListenerWithSceneGraphPriority(listener,layer)</span><br><span class="line">-- 创建物理世界边界</span><br><span class="line">local edge = cc.Node:create()</span><br><span class="line">edge:setPhysicsBody(cc.PhysicsBody:createEdgeBox(visibleSize))</span><br><span class="line">edge:setPosition(visibleSize.width/2,visibleSize.height/2)</span><br><span class="line">layer:addChild(edge)</span><br><span class="line">-- 层添加到场景里</span><br><span class="line">scene:addChild(layer)</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>

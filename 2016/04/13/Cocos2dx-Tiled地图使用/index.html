@@ -57,16 +57,28 @@
 
 
 
-<meta name="description" content="野生程序猿，语言学习者">
+<meta name="description" content="用Tiled可以制作瓦片地图可以在Cocos中轻松使用。  
+1.Tiled制作并导出地图Tiled可以创建的地图种类包括正常、45度、45度交错和六边形风格。载入图块资源后编辑图层，然后导出.tmx地图就可以在Cocos2dx中使用了。  
+2.Cocos2dx使用地图可以在CocosStudio中直接加入
+lua代码：  
+123456789	local _tileMap = cc.TMXTi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cocos2dx-Tiled地图使用">
 <meta property="og:url" content="http://santu.space/2016/04/13/Cocos2dx-Tiled地图使用/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="野生程序猿，语言学习者">
-<meta property="og:updated_time" content="2016-04-14T15:25:53.000Z">
+<meta property="og:description" content="用Tiled可以制作瓦片地图可以在Cocos中轻松使用。  
+1.Tiled制作并导出地图Tiled可以创建的地图种类包括正常、45度、45度交错和六边形风格。载入图块资源后编辑图层，然后导出.tmx地图就可以在Cocos2dx中使用了。  
+2.Cocos2dx使用地图可以在CocosStudio中直接加入
+lua代码：  
+123456789	local _tileMap = cc.TMXTi">
+<meta property="og:updated_time" content="2016-04-17T15:43:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocos2dx-Tiled地图使用">
-<meta name="twitter:description" content="野生程序猿，语言学习者">
+<meta name="twitter:description" content="用Tiled可以制作瓦片地图可以在Cocos中轻松使用。  
+1.Tiled制作并导出地图Tiled可以创建的地图种类包括正常、45度、45度交错和六边形风格。载入图块资源后编辑图层，然后导出.tmx地图就可以在Cocos2dx中使用了。  
+2.Cocos2dx使用地图可以在CocosStudio中直接加入
+lua代码：  
+123456789	local _tileMap = cc.TMXTi">
 
 
 
@@ -289,7 +301,13 @@
       
 
       
-        
+        <p>用Tiled可以制作瓦片地图可以在Cocos中轻松使用。  </p>
+<h2 id="1-Tiled制作并导出地图"><a href="#1-Tiled制作并导出地图" class="headerlink" title="1.Tiled制作并导出地图"></a>1.Tiled制作并导出地图</h2><p>Tiled可以创建的地图种类包括正常、45度、45度交错和六边形风格。载入图块资源后编辑图层，然后导出.tmx地图就可以在Cocos2dx中使用了。  </p>
+<h2 id="2-Cocos2dx使用地图"><a href="#2-Cocos2dx使用地图" class="headerlink" title="2.Cocos2dx使用地图"></a>2.Cocos2dx使用地图</h2><p>可以在CocosStudio中直接加入</p>
+<p>lua代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	local _tileMap = cc.TMXTiledMap:create(&quot;map/map01.tmx&quot;)</span><br><span class="line">    local layer = cc.Layer:create()</span><br><span class="line">    layer:addChild(_tileMap,100,9)</span><br><span class="line">--    local children = _tileMap:getChildren()</span><br><span class="line">--    for k, child in ipairs(children) do</span><br><span class="line">--        child:getTexture():setAntiAliasTexParameters()</span><br><span class="line">--    end</span><br><span class="line">--    layer:addTo(self)</span><br><span class="line">    self:addChild(layer)</span><br></pre></td></tr></table></figure>
+<p>关于Tiled地图的使用方法Cocos官网有<a href="http://www.cocos2d-x.org/wiki/TileMap" target="_blank" rel="external">详细说明</a></p>
+
       
     </div>
 
@@ -445,7 +463,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Tiled制作并导出地图"><span class="nav-number">1.</span> <span class="nav-text">1.Tiled制作并导出地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Cocos2dx使用地图"><span class="nav-number">2.</span> <span class="nav-text">2.Cocos2dx使用地图</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

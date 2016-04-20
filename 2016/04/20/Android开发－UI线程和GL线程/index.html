@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Cocos2dx,CocosStudio," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="用CocosStudio制作帧动画在cocos2dx种播放动画十分简便。  
-1.创建帧动画在CocosStudio中加入一个按钮，在第60帧的位置插入帧，设置缩放120%，在第120帧的位置插入帧，设置缩放100%。保存发布到项目。">
+<meta name="description" content="某次在接入某个android的渠道sdk时，遇到一个切换账号的回调方法，提供的是switchAccountSuccess，这个回调是在切换账号成功后才会触发。这个时候需要先切换回游戏的登入界面再进行新账号的登录。如果直接在switchAccountSuccess里调用lua的注销方法，基本会显示异常。这个时候需要做的是，把调用lua方法的代码放在GL线程中。画面渲染的工作都是由GLThread线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cocos2dx-帧动画">
-<meta property="og:url" content="http://santu.space/2016/04/10/Cocos2dx-帧动画/index.html">
+<meta property="og:title" content="Android开发－UI线程和GL线程">
+<meta property="og:url" content="http://santu.space/2016/04/20/Android开发－UI线程和GL线程/index.html">
 <meta property="og:site_name" content="Santu Memo">
-<meta property="og:description" content="用CocosStudio制作帧动画在cocos2dx种播放动画十分简便。  
-1.创建帧动画在CocosStudio中加入一个按钮，在第60帧的位置插入帧，设置缩放120%，在第120帧的位置插入帧，设置缩放100%。保存发布到项目。">
-<meta property="og:updated_time" content="2016-04-09T18:25:03.000Z">
+<meta property="og:description" content="某次在接入某个android的渠道sdk时，遇到一个切换账号的回调方法，提供的是switchAccountSuccess，这个回调是在切换账号成功后才会触发。这个时候需要先切换回游戏的登入界面再进行新账号的登录。如果直接在switchAccountSuccess里调用lua的注销方法，基本会显示异常。这个时候需要做的是，把调用lua方法的代码放在GL线程中。画面渲染的工作都是由GLThread线程">
+<meta property="og:updated_time" content="2016-04-20T15:52:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cocos2dx-帧动画">
-<meta name="twitter:description" content="用CocosStudio制作帧动画在cocos2dx种播放动画十分简便。  
-1.创建帧动画在CocosStudio中加入一个按钮，在第60帧的位置插入帧，设置缩放120%，在第120帧的位置插入帧，设置缩放100%。保存发布到项目。">
+<meta name="twitter:title" content="Android开发－UI线程和GL线程">
+<meta name="twitter:description" content="某次在接入某个android的渠道sdk时，遇到一个切换账号的回调方法，提供的是switchAccountSuccess，这个回调是在切换账号成功后才会触发。这个时候需要先切换回游戏的登入界面再进行新账号的登录。如果直接在switchAccountSuccess里调用lua的注销方法，基本会显示异常。这个时候需要做的是，把调用lua方法的代码放在GL线程中。画面渲染的工作都是由GLThread线程">
 
 
 
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title> Cocos2dx-帧动画 | Santu Memo </title>
+  <title> Android开发－UI线程和GL线程 | Santu Memo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +224,7 @@
             
             
               
-                Cocos2dx-帧动画
+                Android开发－UI线程和GL线程
               
             
           </h1>
@@ -239,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T01:29:14+08:00" content="2016-04-10">
-              2016-04-10
+            <time itemprop="dateCreated" datetime="2016-04-20T23:29:15+08:00" content="2016-04-20">
+              2016-04-20
             </time>
           </span>
 
@@ -253,8 +250,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Cosos2dx/" itemprop="url" rel="index">
-                    <span itemprop="name">Cosos2dx</span>
+                  <a href="/categories/Android开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发</span>
                   </a>
                 </span>
 
@@ -269,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/10/Cocos2dx-帧动画/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/Cocos2dx-帧动画/" itemprop="commentsCount"></span>
+                <a href="/2016/04/20/Android开发－UI线程和GL线程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Android开发－UI线程和GL线程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,11 +289,10 @@
       
 
       
-        <p>用CocosStudio制作帧动画在cocos2dx种播放动画十分简便。  </p>
-<h2 id="1-创建帧动画"><a href="#1-创建帧动画" class="headerlink" title="1.创建帧动画"></a>1.创建帧动画</h2><p>在CocosStudio中加入一个按钮，在第60帧的位置插入帧，设置缩放120%，在第120帧的位置插入帧，设置缩放100%。保存发布到项目。  </p>
+        <p>某次在接入某个android的渠道sdk时，遇到一个切换账号的回调方法，提供的是switchAccountSuccess，这个回调是在切换账号成功后才会触发。这个时候需要先切换回游戏的登入界面再进行新账号的登录。<br>如果直接在switchAccountSuccess里调用lua的注销方法，基本会显示异常。这个时候需要做的是，把调用lua方法的代码放在GL线程中。画面渲染的工作都是由GLThread线程来完成的。</p>
+<p>需要注意UI线程和GL线程的问题。<br>有时候遇到没有初始化成功回调的sdk时，在调用sdk登入功能的时候其实还没有初始化成功，于是便会出错。这时候可以把sdk的方法放在应用的UI线程中运行。  </p>
+<p>保险起见，在接入sdk的时候，把SDK的方法放在UI线程中运行，lua的方法调用放在GL线程中调用。  </p>
 <a id="more"></a>
-<h2 id="2-播放动画"><a href="#2-播放动画" class="headerlink" title="2.播放动画"></a>2.播放动画</h2><p>在MainScene.lua中：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function MainScene:onCreate()</span><br><span class="line">    -- 加载动画  </span><br><span class="line">    local action = cc.CSLoader:createTimeline(&quot;MainScene.csb&quot;)</span><br><span class="line"></span><br><span class="line">    -- 播放指定的动画，是否循环</span><br><span class="line">    action:play(&quot;animation0&quot;,true)    </span><br><span class="line">    -- 或者指定起始帧数，是否循环</span><br><span class="line">    -- action:gotoFrameAndPlay(0, 10,true)</span><br><span class="line">    -- 起始帧数，结束帧数，是否循环</span><br><span class="line">    -- action:gotoFrameAndPlay(0, 120, true)</span><br><span class="line">    </span><br><span class="line">    -- 执行动画</span><br><span class="line">    self:runAction(action)</span><br><span class="line">    -- 如果是纯代码创建的动画，则需要加入到场景中</span><br><span class="line">    -- self:addChild(action)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -311,9 +307,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cocos2dx/" rel="tag">#Cocos2dx</a>
-          
-            <a href="/tags/CocosStudio/" rel="tag">#CocosStudio</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -322,17 +316,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/Cocos2dx-mvc控件绑定/" rel="next" title="Cocos2dx-mvc控件绑定">
-                <i class="fa fa-chevron-left"></i> Cocos2dx-mvc控件绑定
+              <a href="/2016/04/18/Cocos2dx开发－碰撞检测/" rel="next" title="Cocos2dx开发－碰撞检测">
+                <i class="fa fa-chevron-left"></i> Cocos2dx开发－碰撞检测
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/11/iOS开发-视图方向/" rel="prev" title="iOS开发-视图方向">
-                iOS开发-视图方向 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -358,8 +348,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/10/Cocos2dx-帧动画/"
-           data-title="Cocos2dx-帧动画" data-url="http://santu.space/2016/04/10/Cocos2dx-帧动画/">
+      <div class="ds-thread" data-thread-key="2016/04/20/Android开发－UI线程和GL线程/"
+           data-title="Android开发－UI线程和GL线程" data-url="http://santu.space/2016/04/20/Android开发－UI线程和GL线程/">
       </div>
     
   </div>
@@ -455,7 +445,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建帧动画"><span class="nav-number">1.</span> <span class="nav-text">1.创建帧动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-播放动画"><span class="nav-number">2.</span> <span class="nav-text">2.播放动画</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

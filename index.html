@@ -226,6 +226,125 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/20/Android开发－UI线程和GL线程/" itemprop="url">
+                  Android开发－UI线程和GL线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-20T23:29:15+08:00" content="2016-04-20">
+              2016-04-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/20/Android开发－UI线程和GL线程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Android开发－UI线程和GL线程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>某次在接入某个android的渠道sdk时，遇到一个切换账号的回调方法，提供的是switchAccountSuccess，这个回调是在切换账号成功后才会触发。这个时候需要先切换回游戏的登入界面再进行新账号的登录。<br>如果直接在switchAccountSuccess里调用lua的注销方法，基本会显示异常。这个时候需要做的是，把调用lua方法的代码放在GL线程中。画面渲染的工作都是由GLThread线程来完成的。</p>
+<p>需要注意UI线程和GL线程的问题。<br>有时候遇到没有初始化成功回调的sdk时，在调用sdk登入功能的时候其实还没有初始化成功，于是便会出错。这时候可以把sdk的方法放在应用的UI线程中运行。  </p>
+<p>保险起见，在接入sdk的时候，把SDK的方法放在UI线程中运行，lua的方法调用放在GL线程中调用。  </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/20/Android开发－UI线程和GL线程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/18/Cocos2dx开发－碰撞检测/" itemprop="url">
                   Cocos2dx开发－碰撞检测
                 </a>
@@ -1283,130 +1402,6 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/05/iOS开发－数据持久化/" itemprop="url">
-                  iOS-数据持久化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T22:54:59+08:00" content="2016-04-05">
-              2016-04-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/05/iOS开发－数据持久化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/iOS开发－数据持久化/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>iOS开发中几种常见的数据持久化方法：  </p>
-<ul>
-<li>属性列表  </li>
-<li>对象归档  </li>
-<li>SQLite3  </li>
-<li>Core Data</li>
-</ul>
-<p>这四种方法都使用iOS的文件系统。  </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/05/iOS开发－数据持久化/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1452,7 +1447,7 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

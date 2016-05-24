@@ -226,128 +226,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/06/iOS－UIWebView/" itemprop="url">
-                  iOS－UIWebView
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-06T22:53:16+08:00" content="2016-04-06">
-              2016-04-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/06/iOS－UIWebView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/06/iOS－UIWebView/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="1-创建UIWebView"><a href="#1-创建UIWebView" class="headerlink" title="1.创建UIWebView"></a>1.创建UIWebView</h1><pre><code>CGRect bouds = [[UIScreen manScreen]applicationFrame];  
-UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];  
-webView.scalespageToFit = YES;//自动对页面进行缩放以适应屏幕  
-webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单击可以拨打  
-[self.view addSubview:webView];//添加的UIWebView
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/06/iOS－UIWebView/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/04/05/iOS开发－数据持久化/" itemprop="url">
                   iOS-数据持久化
                 </a>
@@ -1398,6 +1276,125 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/26/Objective-C @property/" itemprop="url">
+                  Objective-C 属性(@property和@synthesize)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-26T02:52:14+08:00" content="2016-03-26">
+              2016-03-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/26/Objective-C @property/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/Objective-C @property/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>@property是Objective-C的关键词，用来让编译好器自动生成与数据成员同名的方法声明。<br>@synthesize则是用来生成对应声明方法的实现。  </p>
+<h2 id="1-property语法格式："><a href="#1-property语法格式：" class="headerlink" title="1.property语法格式："></a>1.property语法格式：</h2><pre><code>@property (参数1, 参数2) 类型名;  
+</code></pre><p>assign: 简单赋值，不更改索引计数，适用于简单数据类型。<br>retain: 使用引用计数，当引用计数为0时会调用dealloc释放内存。 </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/26/Objective-C @property/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1443,7 +1440,7 @@ webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
